@@ -8,7 +8,7 @@ const clock = new THREE.Clock();
 const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
 const pageSettings = {
-  home: { count: 520, radius: 6.8, colorA: 0xff3b4f, colorB: 0x58d7ff, cameraZ: 12.5 },
+  home: { count: 680, radius: 6.8, colorA: 0xff3b4f, colorB: 0x58d7ff, cameraZ: 12.5 },
   concept: { count: 360, radius: 7.4, colorA: 0xd7ff58, colorB: 0xff3b4f, cameraZ: 13.5 },
   engine: { count: 720, radius: 7.8, colorA: 0x58d7ff, colorB: 0xd7ff58, cameraZ: 14.2 },
   slots: { count: 480, radius: 7.1, colorA: 0xff3b4f, colorB: 0xf3bd63, cameraZ: 13 },
@@ -16,6 +16,8 @@ const pageSettings = {
 };
 
 const settings = pageSettings[page] || pageSettings.home;
+let slotEnergy = 0;
+let slotPhase = 0;
 
 const renderer = new THREE.WebGLRenderer({
   canvas,
@@ -135,7 +137,7 @@ function updatePanels(time) {
     const t = time * data.speed;
     const modulation = Math.sin(time * 0.31 + data.index * 0.017);
     const theta = data.phase + t + pointer.x * 0.8;
-    const radius = data.radius + modulation * 0.38;
+    const radius = data.radius + modulation * 0.38 + slotEnergy * Math.sin(index * 0.1 + slotPhase) * 0.22;
     const x = Math.sin(theta) * radius;
     const y = Math.cos(time * 0.27 + data.index * 0.11) * 1.42 + data.yBias + pointer.y * 0.9;
     const z = Math.cos(theta) * radius + Math.sin(time * 0.19 + data.lane) * 0.55;
@@ -143,7 +145,7 @@ function updatePanels(time) {
     dummy.position.set(x, y, z);
     dummy.lookAt(camera.position);
     dummy.rotateZ(Math.sin(time + data.index) * 0.12);
-    const pulse = data.scale * (1 + Math.max(0, modulation) * 0.12);
+    const pulse = data.scale * (1 + Math.max(0, modulation) * 0.12 + slotEnergy * 0.1);
     dummy.scale.set(pulse, pulse, pulse);
     dummy.updateMatrix();
     panels.setMatrixAt(index, dummy.matrix);
@@ -178,6 +180,23 @@ function animateCounters() {
     }
     requestAnimationFrame(tick);
   });
+}
+
+function bindSlotConsole() {
+  const slotButtons = document.querySelectorAll("[data-slot]");
+  slotButtons.forEach((button, index) => {
+    button.addEventListener("click", () => {
+      slotButtons.forEach((item) => item.classList.remove("is-active"));
+      button.classList.add("is-active");
+      slotEnergy = 1.4;
+      slotPhase = index * 0.9;
+      setTimeout(() => {
+        slotEnergy = 0.45;
+      }, 520);
+    });
+  });
+  slotButtons[0]?.classList.add("is-active");
+  if (slotButtons.length) slotEnergy = 0.45;
 }
 
 function animate() {
@@ -224,4 +243,5 @@ onResize();
 updatePanels(0);
 updateParticles(0);
 animateCounters();
+bindSlotConsole();
 animate();
