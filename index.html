@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Your Ad Could Be Here is an anti-film built entirely from ads, sponsors, and paid messages."
+    />
+    <meta property="og:title" content="Your Ad Could Be Here" />
+    <meta
+      property="og:description"
+      content="A viral advertising stunt by an Armenian creator, where brands do not just place ads - they become the story."
+    />
+    <meta property="og:image" content="assets/hero-cinema-ads.png" />
+    <title>Your Ad Could Be Here</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="#top" aria-label="Your Ad Could Be Here home">
+        <span class="brand-mark"></span>
+        <span>Your Ad Could Be Here</span>
+      </a>
+      <nav class="nav" aria-label="Primary navigation">
+        <a href="#concept">Concept</a>
+        <a href="#slots">Slots</a>
+        <a href="#request">Request</a>
+      </nav>
+    </header>
+
+    <main id="top">
+      <section class="hero" aria-label="Project introduction">
+        <img
+          class="hero-image"
+          src="assets/hero-cinema-ads.png"
+          alt="A dark cinema screen transformed into a wall of abstract advertising slots."
+        />
+        <div class="hero-scrim"></div>
+        <div class="hero-content">
+          <p class="eyebrow">Now inviting first Armenian and diaspora brands</p>
+          <h1>Your Ad Could Be Here</h1>
+          <p class="hero-copy">
+            An anti-film built entirely from ads, sponsors, and paid messages.
+            A viral advertising stunt by an Armenian creator, where brands do
+            not just place ads - they become the story.
+          </p>
+          <div class="hero-actions">
+            <a class="button primary" href="#request">Request an early slot</a>
+            <a class="button secondary" href="#concept">See the concept</a>
+          </div>
+        </div>
+      </section>
+
+      <section id="concept" class="section intro-section">
+        <div class="section-label">The concept</div>
+        <div class="intro-copy">
+          <h2>A movie where advertising becomes the plot.</h2>
+          <p>
+            Your Ad Could Be Here is an anti-film with no traditional story.
+            Instead of characters, drama, and a normal plot, the film is built
+            from paid placements, sponsor messages, brand appearances, scrolling
+            text, credits, and absurd advertising moments.
+          </p>
+          <p class="question">
+            If marketing can sell anything, can it sell a film that tells people
+            not to watch it?
+          </p>
+        </div>
+      </section>
+
+      <section class="section proof-section" aria-label="Why brands join">
+        <div class="proof-item">
+          <span>01</span>
+          <h3>Early visibility</h3>
+          <p>
+            First brands become part of the original version before the project
+            opens wider in the US.
+          </p>
+        </div>
+        <div class="proof-item">
+          <span>02</span>
+          <h3>Not a normal ad</h3>
+          <p>
+            The placement is part of the story, not a forgettable interruption
+            before the story starts.
+          </p>
+        </div>
+        <div class="proof-item">
+          <span>03</span>
+          <h3>Diaspora first</h3>
+          <p>
+            The first wave is focused on Armenian and diaspora brands with
+            enough taste to join something strange early.
+          </p>
+        </div>
+      </section>
+
+      <section id="slots" class="section slots-section">
+        <div>
+          <div class="section-label">Early slots</div>
+          <h2>Buy a visible place in the experiment.</h2>
+        </div>
+        <div class="slots-grid">
+          <article class="slot">
+            <p>5-second placement</p>
+            <span>Small visual appearance in the anti-film.</span>
+          </article>
+          <article class="slot">
+            <p>15-second placement</p>
+            <span>A longer sponsor moment inside the project.</span>
+          </article>
+          <article class="slot">
+            <p>Text / ticker message</p>
+            <span>A paid line inside the moving message layer.</span>
+          </article>
+          <article class="slot">
+            <p>Name in credits</p>
+            <span>A supporter credit in the final project.</span>
+          </article>
+        </div>
+      </section>
+
+      <section id="request" class="section request-section">
+        <div class="request-copy">
+          <div class="section-label">Request access</div>
+          <h2>Want your ad here?</h2>
+          <p>
+            We are inviting a small first group of Armenian and diaspora brands
+            before the public launch. Send a short request and we will share the
+            one-page concept.
+          </p>
+        </div>
+        <form
+          class="request-form"
+          name="early-slot"
+          method="POST"
+          data-netlify="true"
+          netlify-honeypot="bot-field"
+        >
+          <input type="hidden" name="form-name" value="early-slot" />
+          <p class="hidden">
+            <label>Do not fill this out <input name="bot-field" /></label>
+          </p>
+          <label>
+            Brand or name
+            <input name="brand" type="text" autocomplete="organization" required />
+          </label>
+          <label>
+            Email
+            <input name="email" type="email" autocomplete="email" required />
+          </label>
+          <label>
+            What kind of slot are you curious about?
+            <select name="slot">
+              <option>5-second placement</option>
+              <option>15-second placement</option>
+              <option>Text / ticker message</option>
+              <option>Name in credits</option>
+              <option>Not sure yet</option>
+            </select>
+          </label>
+          <label>
+            Message
+            <textarea name="message" rows="4" placeholder="Tell us what you want to place in the anti-film."></textarea>
+          </label>
+          <button class="button primary" type="submit">Request early slot</button>
+        </form>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>Your Ad Could Be Here</p>
+      <a href="mailto:hello@youradcouldbehere.com">hello@youradcouldbehere.com</a>
+    </footer>
+  </body>
+</html>
