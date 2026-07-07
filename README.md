@@ -1,6 +1,6 @@
 # Your Ad Could Be Here
 
-Static bilingual landing page for a viral advertising anti-film by an Armenian creator.
+Static English landing page for a 3D cinematic anti-film campaign by an Armenian creator.
 
 ## Hosting
 
@@ -14,7 +14,7 @@ The site is designed to run for free on GitHub Pages.
 
 - `index.html` - page markup
 - `styles.css` - responsive visual system
-- `script.js` - RU/EN language switcher
+- `script.js` - animated signal canvas
 - `assets/hero-anti-film.png` - generated cinematic hero asset
 - `CNAME` - custom domain for GitHub Pages
 
