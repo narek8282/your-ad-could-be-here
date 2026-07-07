@@ -1,0 +1,823 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Your Ad Could Be Here - One Deck</title>
+    <meta
+      name="description"
+      content="A hidden six-frame concept page for Your Ad Could Be Here."
+    />
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+
+      :root {
+        --bg: #0d0d0f;
+        --panel: #141416;
+        --panel-2: #101012;
+        --cream: #f2ede4;
+        --grey: #9a9a9e;
+        --red: #e23b2e;
+        --line: rgba(242, 237, 228, 0.14);
+      }
+
+      html {
+        background: var(--bg);
+        scroll-behavior: smooth;
+      }
+
+      body {
+        background: var(--bg);
+        color: var(--cream);
+        font-family: Arial, Helvetica, sans-serif;
+        margin: 0;
+      }
+
+      .deck {
+        background: var(--bg);
+      }
+
+      .slide {
+        align-items: center;
+        background: var(--bg);
+        display: flex;
+        justify-content: center;
+        min-height: 100vh;
+        overflow: hidden;
+        padding: clamp(18px, 3vw, 54px);
+        position: relative;
+      }
+
+      .slide::after {
+        background-image:
+          linear-gradient(rgba(242, 237, 228, 0.035) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(242, 237, 228, 0.028) 1px, transparent 1px);
+        background-size: 32px 32px;
+        content: "";
+        inset: 0;
+        opacity: 0.24;
+        pointer-events: none;
+        position: absolute;
+      }
+
+      .stage {
+        aspect-ratio: 16 / 9;
+        background: var(--bg);
+        box-shadow: 0 40px 100px rgba(0, 0, 0, 0.45);
+        max-height: calc(100vh - 42px);
+        max-width: 1600px;
+        overflow: hidden;
+        position: relative;
+        width: min(100%, calc((100vh - 42px) * 1.777));
+      }
+
+      .kicker,
+      .page-num {
+        color: var(--grey);
+        font-size: clamp(9px, 0.7vw, 13px);
+        font-weight: 800;
+        letter-spacing: 0.18em;
+        position: absolute;
+        text-transform: uppercase;
+        z-index: 5;
+      }
+
+      .kicker {
+        left: 4%;
+        top: 4%;
+      }
+
+      .page-num {
+        right: 4%;
+        top: 4%;
+      }
+
+      h1 {
+        color: var(--cream);
+        font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+        font-size: clamp(56px, 7.6vw, 142px);
+        font-weight: 900;
+        letter-spacing: 0;
+        line-height: 0.82;
+        margin: 0;
+        text-transform: uppercase;
+      }
+
+      .red {
+        color: var(--red);
+      }
+
+      p {
+        color: var(--grey);
+        font-size: clamp(14px, 1.15vw, 22px);
+        line-height: 1.42;
+        margin: 0;
+      }
+
+      .subtitle {
+        max-width: min(620px, 45vw);
+      }
+
+      .cta {
+        align-items: center;
+        background: var(--red);
+        color: white;
+        display: inline-flex;
+        font-size: clamp(11px, 0.82vw, 15px);
+        font-weight: 900;
+        height: clamp(42px, 4vw, 62px);
+        justify-content: center;
+        letter-spacing: 0.08em;
+        padding: 0 28px;
+        text-transform: uppercase;
+      }
+
+      .panel {
+        background: var(--panel);
+        border: 1px solid var(--line);
+        position: relative;
+      }
+
+      .screen-wall {
+        background:
+          linear-gradient(90deg, rgba(13, 13, 15, 0.97) 0%, rgba(13, 13, 15, 0.72) 34%, rgba(13, 13, 15, 0.28) 72%, rgba(13, 13, 15, 0.64) 100%),
+          linear-gradient(0deg, rgba(13, 13, 15, 0.94), rgba(13, 13, 15, 0.08) 42%, rgba(13, 13, 15, 0.52)),
+          repeating-linear-gradient(90deg, transparent 0 78px, rgba(226, 59, 46, 0.22) 79px 82px),
+          repeating-linear-gradient(0deg, transparent 0 54px, rgba(242, 237, 228, 0.08) 55px 58px),
+          #050506;
+        inset: 0;
+        position: absolute;
+      }
+
+      .screen-wall::before {
+        background:
+          radial-gradient(ellipse at 68% 38%, rgba(226, 59, 46, 0.5), transparent 22%),
+          radial-gradient(ellipse at 72% 18%, rgba(242, 237, 228, 0.18), transparent 28%);
+        content: "";
+        inset: 0;
+        opacity: 0.9;
+        position: absolute;
+      }
+
+      .screen-wall::after {
+        background:
+          linear-gradient(90deg, transparent, rgba(242, 237, 228, 0.08), transparent),
+          repeating-linear-gradient(90deg, rgba(242, 237, 228, 0.08) 0 2px, transparent 2px 46px),
+          repeating-linear-gradient(0deg, rgba(242, 237, 228, 0.055) 0 2px, transparent 2px 34px);
+        clip-path: polygon(41% 6%, 94% 0, 98% 68%, 52% 78%);
+        content: "";
+        inset: 0;
+        position: absolute;
+      }
+
+      .silhouette {
+        background: #020203;
+        border-radius: 48% 48% 0 0;
+        bottom: 14%;
+        height: 22%;
+        left: 61%;
+        position: absolute;
+        width: 5.2%;
+        z-index: 2;
+      }
+
+      .silhouette::before {
+        background: #020203;
+        border-radius: 50%;
+        content: "";
+        height: 23%;
+        left: 24%;
+        position: absolute;
+        top: -16%;
+        width: 52%;
+      }
+
+      .floor-reflection {
+        background:
+          linear-gradient(90deg, rgba(226, 59, 46, 0.16), transparent 45%),
+          repeating-linear-gradient(90deg, rgba(242, 237, 228, 0.07) 0 2px, transparent 2px 80px);
+        bottom: 0;
+        height: 19%;
+        left: 0;
+        position: absolute;
+        right: 0;
+        transform: skewY(-3deg);
+      }
+
+      .hero-copy {
+        left: 4%;
+        position: absolute;
+        top: 12%;
+        z-index: 4;
+      }
+
+      .hero-copy h1 {
+        font-size: clamp(70px, 9vw, 166px);
+        max-width: 920px;
+      }
+
+      .hero-copy .subtitle {
+        margin: 3% 0 5%;
+      }
+
+      .top-copy {
+        left: 4%;
+        position: absolute;
+        right: 4%;
+        top: 9%;
+        z-index: 4;
+      }
+
+      .top-copy h1 {
+        max-width: 980px;
+      }
+
+      .top-copy .subtitle {
+        margin-top: 2%;
+      }
+
+      .two-panel {
+        display: grid;
+        gap: 2%;
+        grid-template-columns: 1fr 1fr;
+        height: 48%;
+        left: 4%;
+        position: absolute;
+        right: 4%;
+        top: 45%;
+        z-index: 4;
+      }
+
+      .ad-box {
+        align-items: center;
+        display: flex;
+        justify-content: center;
+        overflow: hidden;
+      }
+
+      .skip {
+        background:
+          linear-gradient(rgba(242, 237, 228, 0.04), rgba(242, 237, 228, 0.01)),
+          var(--panel-2);
+        filter: saturate(0);
+      }
+
+      .skip-button {
+        border: 1px solid rgba(154, 154, 158, 0.45);
+        color: rgba(154, 154, 158, 0.6);
+        font-size: clamp(22px, 2.15vw, 38px);
+        font-weight: 900;
+        letter-spacing: 0.04em;
+        padding: 24px 40px;
+      }
+
+      .owned-grid {
+        display: grid;
+        gap: 8px;
+        grid-template-columns: repeat(8, 1fr);
+        padding: 4%;
+      }
+
+      .brand-tile,
+      .pixel {
+        align-items: center;
+        border: 1px solid rgba(242, 237, 228, 0.12);
+        color: rgba(242, 237, 228, 0.62);
+        display: flex;
+        font-size: clamp(8px, 0.62vw, 11px);
+        font-weight: 900;
+        justify-content: center;
+        min-height: 44px;
+        text-transform: uppercase;
+      }
+
+      .brand-tile:nth-child(3n),
+      .brand-tile:nth-child(8n) {
+        background: var(--red);
+        border-color: var(--red);
+        color: white;
+      }
+
+      .label-row {
+        bottom: 4%;
+        display: grid;
+        gap: 2%;
+        grid-template-columns: 1fr 1fr;
+        left: 4%;
+        position: absolute;
+        right: 4%;
+        z-index: 5;
+      }
+
+      .split-label {
+        font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+        font-size: clamp(38px, 3.8vw, 66px);
+        line-height: 0.86;
+        text-transform: uppercase;
+      }
+
+      .museum {
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        height: 44%;
+        justify-content: center;
+        left: 25%;
+        position: absolute;
+        top: 40%;
+        width: 50%;
+        z-index: 4;
+      }
+
+      .film-frame {
+        background:
+          radial-gradient(circle at 50% 36%, rgba(242, 237, 228, 0.25), transparent 25%),
+          repeating-linear-gradient(90deg, rgba(226, 59, 46, 0.2) 0 10px, transparent 10px 48px),
+          repeating-linear-gradient(0deg, rgba(242, 237, 228, 0.08) 0 2px, transparent 2px 38px),
+          #050506;
+        border: 8px solid #19191b;
+        box-shadow: 0 38px 110px rgba(0, 0, 0, 0.55), 0 0 80px rgba(226, 59, 46, 0.12);
+        height: 66%;
+        position: relative;
+        width: 66%;
+      }
+
+      .film-frame::before {
+        background: linear-gradient(rgba(242, 237, 228, 0.22), transparent);
+        content: "";
+        height: 50%;
+        left: 50%;
+        position: absolute;
+        top: -42%;
+        transform: translateX(-50%);
+        width: 64%;
+      }
+
+      .plaque {
+        border: 1px solid var(--line);
+        color: var(--cream);
+        font-size: clamp(10px, 0.8vw, 14px);
+        font-weight: 900;
+        letter-spacing: 0.14em;
+        margin-top: 18px;
+        padding: 10px 18px;
+        text-transform: uppercase;
+      }
+
+      .stats {
+        bottom: 6%;
+        display: grid;
+        gap: 2%;
+        grid-template-columns: repeat(3, 1fr);
+        left: 5%;
+        position: absolute;
+        right: 5%;
+        z-index: 4;
+      }
+
+      .stat {
+        border-top: 1px solid var(--line);
+        padding-top: 14px;
+      }
+
+      .stat strong {
+        color: var(--red);
+        display: block;
+        font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+        font-size: clamp(34px, 3.1vw, 56px);
+        line-height: 0.9;
+      }
+
+      .stat span {
+        color: var(--grey);
+        font-size: clamp(9px, 0.75vw, 13px);
+        font-weight: 800;
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+      }
+
+      .grid-layout {
+        display: grid;
+        gap: 2%;
+        grid-template-columns: 1.35fr 0.65fr;
+        left: 4%;
+        position: absolute;
+        right: 4%;
+        top: 43%;
+        z-index: 4;
+      }
+
+      .pixel-grid {
+        display: grid;
+        gap: 5px;
+        grid-template-columns: repeat(13, 1fr);
+        height: 46vh;
+        max-height: 420px;
+        padding: 18px;
+      }
+
+      .pixel {
+        background: #0f0f11;
+        font-size: clamp(6px, 0.48vw, 9px);
+        min-height: auto;
+      }
+
+      .pixel.filled {
+        background: #27211f;
+        border-color: rgba(242, 237, 228, 0.25);
+        color: var(--cream);
+      }
+
+      .pixel.hot {
+        background: var(--red);
+        border-color: var(--red);
+        color: white;
+        position: relative;
+      }
+
+      .pixel.hot::after {
+        border: 3px solid var(--red);
+        content: "";
+        inset: -8px;
+        position: absolute;
+      }
+
+      .tooltip {
+        background: var(--panel);
+        border: 1px solid var(--red);
+        color: var(--cream);
+        font-size: clamp(10px, 0.8vw, 14px);
+        font-weight: 900;
+        left: 36%;
+        letter-spacing: 0.04em;
+        padding: 12px 14px;
+        position: absolute;
+        top: 56%;
+        z-index: 5;
+      }
+
+      .slot-list {
+        display: grid;
+        gap: 12px;
+      }
+
+      .slot-row {
+        align-items: center;
+        background: var(--panel);
+        border: 1px solid var(--line);
+        color: var(--cream);
+        display: grid;
+        font-size: clamp(11px, 0.9vw, 15px);
+        font-weight: 900;
+        gap: 14px;
+        grid-template-columns: 18px 1fr;
+        min-height: 64px;
+        padding: 14px;
+        text-transform: uppercase;
+      }
+
+      .icon {
+        background: var(--red);
+        height: 12px;
+        width: 12px;
+      }
+
+      .heatmap {
+        display: grid;
+        gap: 5px;
+        grid-template-columns: repeat(22, 1fr);
+        height: 43%;
+        left: 4%;
+        padding: 18px;
+        position: absolute;
+        right: 4%;
+        top: 47%;
+        z-index: 4;
+      }
+
+      .heat {
+        background: #121214;
+        border: 1px solid rgba(242, 237, 228, 0.08);
+      }
+
+      .heat.edge {
+        background: #1a1716;
+      }
+
+      .heat.mid {
+        background: #4a1e19;
+      }
+
+      .heat.core {
+        background: #e23b2e;
+      }
+
+      .heat.gold {
+        background: #c76b46;
+      }
+
+      .progress {
+        background: #141416;
+        border: 1px solid var(--line);
+        bottom: 5%;
+        height: 46px;
+        left: 4%;
+        position: absolute;
+        right: 4%;
+        z-index: 5;
+      }
+
+      .progress::before {
+        background: var(--red);
+        content: "";
+        inset: 0 auto 0 0;
+        position: absolute;
+        width: 26%;
+      }
+
+      .progress span {
+        color: white;
+        font-size: clamp(10px, 0.82vw, 14px);
+        font-weight: 900;
+        left: 18px;
+        letter-spacing: 0.08em;
+        position: absolute;
+        text-transform: uppercase;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 2;
+      }
+
+      .center-line {
+        color: var(--cream);
+        font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+        font-size: clamp(48px, 5.6vw, 98px);
+        left: 50%;
+        line-height: 0.9;
+        position: absolute;
+        text-align: center;
+        text-transform: uppercase;
+        top: 38%;
+        transform: translateX(-50%);
+        width: 70%;
+        z-index: 4;
+      }
+
+      .slide-6-cta {
+        left: 4%;
+        position: absolute;
+        top: 72%;
+        z-index: 4;
+      }
+
+      .contact {
+        bottom: 8%;
+        color: var(--grey);
+        font-size: clamp(11px, 0.9vw, 16px);
+        font-weight: 800;
+        left: 4%;
+        letter-spacing: 0.04em;
+        position: absolute;
+        z-index: 4;
+      }
+
+      .qr {
+        background:
+          conic-gradient(from 90deg, #fff 25%, #111 0 50%, #fff 0 75%, #111 0) 0 0 / 18px 18px,
+          #fff;
+        border: 8px solid var(--cream);
+        bottom: 8%;
+        height: 96px;
+        position: absolute;
+        right: 5%;
+        width: 96px;
+        z-index: 4;
+      }
+
+      @media (max-width: 760px) {
+        .slide {
+          align-items: flex-start;
+          min-height: auto;
+          padding: 12px;
+        }
+
+        .stage {
+          aspect-ratio: 9 / 16;
+          max-height: none;
+          min-height: 720px;
+          width: 100%;
+        }
+
+        h1,
+        .hero-copy h1 {
+          font-size: clamp(50px, 17vw, 78px);
+        }
+
+        .subtitle {
+          max-width: 88%;
+        }
+
+        .two-panel,
+        .grid-layout {
+          grid-template-columns: 1fr;
+        }
+
+        .two-panel {
+          height: 46%;
+          top: 43%;
+        }
+
+        .label-row {
+          display: none;
+        }
+
+        .owned-grid {
+          grid-template-columns: repeat(4, 1fr);
+        }
+
+        .museum {
+          height: 34%;
+          left: 7%;
+          top: 48%;
+          width: 86%;
+        }
+
+        .stats {
+          grid-template-columns: 1fr;
+        }
+
+        .grid-layout {
+          top: 40%;
+        }
+
+        .slot-list {
+          display: none;
+        }
+
+        .pixel-grid {
+          height: 300px;
+        }
+
+        .heatmap {
+          gap: 3px;
+          grid-template-columns: repeat(11, 1fr);
+          height: 36%;
+          top: 50%;
+        }
+
+        .qr {
+          display: none;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main class="deck">
+      <section class="slide" aria-label="Slide 1">
+        <div class="stage">
+          <div class="screen-wall"></div>
+          <div class="silhouette"></div>
+          <div class="floor-reflection"></div>
+          <div class="kicker">Concept deck</div>
+          <div class="page-num">01 / 06</div>
+          <div class="hero-copy">
+            <h1>Your Ad<br />Could Be <span class="red">Here</span></h1>
+            <p class="subtitle">
+              The world's first movie built entirely from <span class="red">ads</span>.
+              No story between the ads - the ads are the story.
+            </p>
+            <div class="cta">Watch Trailer</div>
+          </div>
+        </div>
+      </section>
+
+      <section class="slide" aria-label="Slide 2">
+        <div class="stage">
+          <div class="kicker">The inversion</div>
+          <div class="page-num">02 / 06</div>
+          <div class="top-copy">
+            <h1>Advertising,<br />Inside <span class="red">Out</span></h1>
+            <p class="subtitle">
+              You spend money to be skipped. So we made the one film that is nothing but the ads -
+              sponsor slots, paid messages, brand moments, ticker text, credits, and audience-owned pixels.
+            </p>
+          </div>
+          <div class="two-panel">
+            <div class="panel ad-box skip"><div class="skip-button">SKIP AD IN 5...</div></div>
+            <div class="panel owned-grid">
+              <div class="brand-tile">Ad</div><div class="brand-tile">Slot</div><div class="brand-tile">Paid</div><div class="brand-tile">Pixel</div>
+              <div class="brand-tile">Ticker</div><div class="brand-tile">Credit</div><div class="brand-tile">Brand</div><div class="brand-tile">Frame</div>
+              <div class="brand-tile">Logo</div><div class="brand-tile">Name</div><div class="brand-tile">Story</div><div class="brand-tile">Buy</div>
+              <div class="brand-tile">Seen</div><div class="brand-tile">Cast</div><div class="brand-tile">Own</div><div class="brand-tile">Here</div>
+            </div>
+          </div>
+          <div class="label-row">
+            <div class="split-label red">Skipped</div>
+            <div class="split-label">Owned</div>
+          </div>
+        </div>
+      </section>
+
+      <section class="slide" aria-label="Slide 3">
+        <div class="stage">
+          <div class="kicker">World-first claim</div>
+          <div class="page-num">03 / 06</div>
+          <div class="top-copy">
+            <h1>A World-First<br />Happens <span class="red">Once</span></h1>
+            <p class="subtitle">
+              The first feature composed 100% of advertising - a permanent cultural artifact,
+              not a 30-second spot that expires. You're not buying impressions.
+              You're buying a footnote in film history.
+            </p>
+          </div>
+          <div class="museum panel">
+            <div class="film-frame"></div>
+            <div class="plaque">First of its kind</div>
+          </div>
+          <div class="stats">
+            <div class="stat"><strong>1st</strong><span>feature made of ads</span></div>
+            <div class="stat"><strong>Forever</strong><span>on the record forever</span></div>
+            <div class="stat"><strong>0</strong><span>expiry date</span></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="slide" aria-label="Slide 4">
+        <div class="stage">
+          <div class="kicker">Slot system</div>
+          <div class="page-num">04 / 06</div>
+          <div class="top-copy">
+            <h1>You're Not Placed.<br />You're <span class="red">Cast.</span></h1>
+            <p class="subtitle">
+              Visual placement / Paid message or ticker / Name in credits / Supporter slot.
+              The screen is a pixel grid of owned squares - every element is a character.
+            </p>
+          </div>
+          <div class="grid-layout">
+            <div class="panel pixel-grid">
+              <div class="pixel">Your ad here</div><div class="pixel">Your ad here</div><div class="pixel filled">Food</div><div class="pixel">Your ad here</div><div class="pixel">Your ad here</div><div class="pixel filled">Cafe</div><div class="pixel">Your ad here</div><div class="pixel">Your ad here</div><div class="pixel hot">You</div><div class="pixel">Your ad here</div><div class="pixel filled">Shop</div><div class="pixel">Your ad here</div><div class="pixel">Your ad here</div>
+              <div class="pixel">Your ad here</div><div class="pixel">Your ad here</div><div class="pixel">Your ad here</div><div class="pixel filled">Logo</div><div class="pixel">Your ad here</div><div class="pixel">Your ad here</div><div class="pixel">Your ad here</div><div class="pixel filled">Ad</div><div class="pixel">Your ad here</div><div class="pixel">Your ad here</div><div class="pixel">Your ad here</div><div class="pixel">Your ad here</div><div class="pixel filled">Name</div>
+              <div class="pixel filled">Brand</div><div class="pixel">Your ad here</div><div class="pixel">Your ad here</div><div class="pixel">Your ad here</div><div class="pixel">Your ad here</div><div class="pixel filled">Slot</div><div class="pixel">Your ad here</div><div class="pixel">Your ad here</div><div class="pixel">Your ad here</div><div class="pixel filled">Paid</div><div class="pixel">Your ad here</div><div class="pixel">Your ad here</div><div class="pixel">Your ad here</div>
+              <div class="pixel">Your ad here</div><div class="pixel filled">Text</div><div class="pixel">Your ad here</div><div class="pixel">Your ad here</div><div class="pixel">Your ad here</div><div class="pixel">Your ad here</div><div class="pixel filled">Credit</div><div class="pixel">Your ad here</div><div class="pixel">Your ad here</div><div class="pixel">Your ad here</div><div class="pixel">Your ad here</div><div class="pixel filled">Frame</div><div class="pixel">Your ad here</div>
+              <div class="pixel">Your ad here</div><div class="pixel">Your ad here</div><div class="pixel">Your ad here</div><div class="pixel filled">Logo</div><div class="pixel">Your ad here</div><div class="pixel">Your ad here</div><div class="pixel">Your ad here</div><div class="pixel">Your ad here</div><div class="pixel filled">Name</div><div class="pixel">Your ad here</div><div class="pixel">Your ad here</div><div class="pixel">Your ad here</div><div class="pixel filled">Own</div>
+            </div>
+            <div class="slot-list">
+              <div class="slot-row"><i class="icon"></i>Visual placement</div>
+              <div class="slot-row"><i class="icon"></i>Paid message / ticker</div>
+              <div class="slot-row"><i class="icon"></i>Name in credits</div>
+              <div class="slot-row"><i class="icon"></i>Supporter slot</div>
+            </div>
+          </div>
+          <div class="tooltip">Your pixel - x:1200 / y:720</div>
+        </div>
+      </section>
+
+      <section class="slide" aria-label="Slide 5">
+        <div class="stage">
+          <div class="kicker">Launch wave</div>
+          <div class="page-num">05 / 06</div>
+          <div class="top-copy">
+            <h1>The First Wave Is<br />The <span class="red">Visible</span> Wave</h1>
+            <p class="subtitle">
+              Early means a cleaner, bigger, front-and-center position. We open with a small first
+              group of Armenian and diaspora brands, then widen to the US. The grid fills once -
+              early names define it.
+            </p>
+          </div>
+          <div class="panel heatmap">
+            <div class="heat edge"></div><div class="heat"></div><div class="heat"></div><div class="heat edge"></div><div class="heat"></div><div class="heat"></div><div class="heat edge"></div><div class="heat"></div><div class="heat"></div><div class="heat mid"></div><div class="heat mid"></div><div class="heat mid"></div><div class="heat"></div><div class="heat"></div><div class="heat edge"></div><div class="heat"></div><div class="heat"></div><div class="heat edge"></div><div class="heat"></div><div class="heat"></div><div class="heat edge"></div><div class="heat"></div>
+            <div class="heat"></div><div class="heat edge"></div><div class="heat"></div><div class="heat"></div><div class="heat mid"></div><div class="heat"></div><div class="heat"></div><div class="heat mid"></div><div class="heat gold"></div><div class="heat core"></div><div class="heat core"></div><div class="heat gold"></div><div class="heat mid"></div><div class="heat"></div><div class="heat"></div><div class="heat mid"></div><div class="heat"></div><div class="heat"></div><div class="heat edge"></div><div class="heat"></div><div class="heat"></div><div class="heat edge"></div>
+            <div class="heat"></div><div class="heat"></div><div class="heat edge"></div><div class="heat mid"></div><div class="heat"></div><div class="heat mid"></div><div class="heat gold"></div><div class="heat core"></div><div class="heat core"></div><div class="heat core"></div><div class="heat gold"></div><div class="heat core"></div><div class="heat core"></div><div class="heat gold"></div><div class="heat mid"></div><div class="heat"></div><div class="heat mid"></div><div class="heat edge"></div><div class="heat"></div><div class="heat"></div><div class="heat"></div><div class="heat edge"></div>
+            <div class="heat edge"></div><div class="heat"></div><div class="heat mid"></div><div class="heat"></div><div class="heat mid"></div><div class="heat gold"></div><div class="heat core"></div><div class="heat core"></div><div class="heat core"></div><div class="heat gold"></div><div class="heat core"></div><div class="heat core"></div><div class="heat core"></div><div class="heat core"></div><div class="heat gold"></div><div class="heat mid"></div><div class="heat"></div><div class="heat mid"></div><div class="heat"></div><div class="heat edge"></div><div class="heat"></div><div class="heat"></div>
+            <div class="heat"></div><div class="heat edge"></div><div class="heat"></div><div class="heat mid"></div><div class="heat gold"></div><div class="heat core"></div><div class="heat core"></div><div class="heat gold"></div><div class="heat core"></div><div class="heat core"></div><div class="heat core"></div><div class="heat core"></div><div class="heat gold"></div><div class="heat core"></div><div class="heat core"></div><div class="heat gold"></div><div class="heat mid"></div><div class="heat"></div><div class="heat mid"></div><div class="heat"></div><div class="heat edge"></div><div class="heat"></div>
+            <div class="heat edge"></div><div class="heat"></div><div class="heat"></div><div class="heat"></div><div class="heat mid"></div><div class="heat gold"></div><div class="heat core"></div><div class="heat core"></div><div class="heat gold"></div><div class="heat core"></div><div class="heat core"></div><div class="heat gold"></div><div class="heat core"></div><div class="heat core"></div><div class="heat gold"></div><div class="heat mid"></div><div class="heat"></div><div class="heat mid"></div><div class="heat"></div><div class="heat"></div><div class="heat"></div><div class="heat edge"></div>
+          </div>
+          <div class="progress"><span>2 153 884 / 8 294 400 pixels claimed (26%)</span></div>
+        </div>
+      </section>
+
+      <section class="slide" aria-label="Slide 6">
+        <div class="stage">
+          <div class="screen-wall"></div>
+          <div class="silhouette"></div>
+          <div class="floor-reflection"></div>
+          <div class="kicker">Next step</div>
+          <div class="page-num">06 / 06</div>
+          <div class="hero-copy">
+            <h1>Want To See<br />Your <span class="red">Slot?</span></h1>
+            <p class="subtitle">
+              Let's do a 30-minute working session - we'll mock up exactly where your brand lives
+              in the film. The only question is whose name is in it.
+            </p>
+          </div>
+          <div class="center-line">Whose name is in it?</div>
+          <div class="slide-6-cta cta">Book The Session</div>
+          <div class="contact">youradcouldbehere.com / @narek8282</div>
+          <div class="qr" aria-hidden="true"></div>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
