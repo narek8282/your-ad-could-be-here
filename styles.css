@@ -614,9 +614,10 @@ code {
   }
 
   h1 {
-    font-size: clamp(42px, 14vw, 62px);
+    font-size: clamp(38px, 11.5vw, 50px);
     line-height: 0.88;
-    overflow-wrap: anywhere;
+    overflow-wrap: normal;
+    word-break: normal;
   }
 
   h2 {
