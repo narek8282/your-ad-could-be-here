@@ -1,134 +1,293 @@
 <!doctype html>
-<html lang="en">
+<html lang="ru">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#080808" />
+    <meta name="theme-color" content="#050607" />
     <meta
       name="description"
-      content="Your Ad Could Be Here is an anti-film built entirely from ads, sponsor slots, and paid messages."
+      content="Ваша Реклама — первый фильм, созданный из рекламы. Купите пиксель, кадр или место в истории проекта."
     />
-    <meta property="og:title" content="Your Ad Could Be Here" />
+    <meta property="og:title" content="Ваша Реклама" />
     <meta
       property="og:description"
-      content="An anti-film where advertising becomes the story."
+      content="Первый в мире фильм, созданный из рекламы."
     />
     <meta property="og:image" content="assets/hero-anti-film.png" />
-    <title>Your Ad Could Be Here</title>
+    <title>Ваша Реклама</title>
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <header class="site-header">
-      <a class="brand" href="#top">Your Ad Could Be Here</a>
-      <nav class="nav" aria-label="Primary navigation">
-        <a href="#idea">Idea</a>
-        <a href="#slots">Slots</a>
-        <a href="#contact">Contact</a>
-      </nav>
-    </header>
+    <div class="page-shell">
+      <header class="topbar">
+        <a class="logo" href="#top">Ваша Реклама</a>
+        <nav class="nav" aria-label="Навигация">
+          <a href="#about">О фильме</a>
+          <a href="#how">Как это работает</a>
+          <a href="#buy">Купить пиксель</a>
+          <a href="#team">Команда</a>
+          <a href="#news">Новости</a>
+          <a href="#faq">FAQ</a>
+        </nav>
+        <a class="login" href="https://t.me/narek8282">Войти</a>
+      </header>
 
-    <main id="top">
-      <section class="hero">
-        <div class="hero-copy">
-          <p class="eyebrow">Anti-film / advertising experiment</p>
-          <h1>Your Ad Could Be Here</h1>
-          <p class="lead">
-            A film built entirely from ads, sponsor slots, paid messages, and
-            branded interruptions. Advertising does not interrupt the story.
-            Advertising is the story.
-          </p>
-          <div class="actions">
-            <a class="button primary" href="#contact">Request early slot</a>
-            <a class="button secondary" href="#idea">Read the idea</a>
+      <main id="top" class="dashboard">
+        <section class="panel hero-panel">
+          <div class="hero-media" aria-hidden="true">
+            <img src="assets/hero-anti-film.png" alt="" />
           </div>
-        </div>
-        <figure class="hero-image">
-          <img
-            src="assets/hero-anti-film.png"
-            alt="A cinematic wall of advertising screens."
-          />
-        </figure>
-      </section>
+          <div class="hero-copy">
+            <h1>Ваша<br />Реклама</h1>
+            <p class="redline">Первый в мире фильм, созданный из рекламы</p>
+            <p>
+              Это не рекламный бренд. Это фильм о рекламе. О том, как она
+              формирует наши вкусы, желания и реальность. От личных постеров до
+              цифровых билбордов — вся история проекта на экране.
+            </p>
+            <a class="ghost-button" href="#trailer">
+              <span class="play-dot"></span>
+              Смотреть трейлер
+            </a>
+          </div>
+        </section>
 
-      <section id="idea" class="section split">
-        <div>
-          <p class="eyebrow">The idea</p>
-          <h2>A movie about advertising, made out of advertising.</h2>
-        </div>
-        <div>
+        <aside id="about" class="panel about-panel">
+          <h2>О фильме</h2>
           <p>
-            Your Ad Could Be Here is an absurd anti-film. Instead of hiding
-            sponsors inside a normal story, the project turns sponsors into the
-            story itself: title cards, warnings, screen walls, credits, product
-            shots, and paid messages.
+            «Ваша Реклама» — это документальный фильм о том, как реклама стала
+            одной из главных сил массовой культуры. Мы исследуем, как рекламные
+            образы формируют наши привычки, ценности и мечты.
           </p>
+          <div class="stats">
+            <div><strong>7</strong><span>стран</span></div>
+            <div><strong>200+</strong><span>интервью</span></div>
+            <div><strong>2 года</strong><span>съемок</span></div>
+          </div>
+          <div class="city-card"></div>
+          <a class="outline-button" href="#buy">Подробнее о фильме</a>
+        </aside>
+
+        <section class="panel facts-row" aria-label="Параметры фильма">
+          <div class="fact">
+            <span class="fact-icon">▣</span>
+            <small>Формат</small>
+            <b>документальный фильм</b>
+          </div>
+          <div class="fact">
+            <span class="fact-icon">◷</span>
+            <small>Хронометраж</small>
+            <b>90 минут</b>
+          </div>
+          <div class="fact">
+            <span class="fact-icon">▰</span>
+            <small>Статус</small>
+            <b>сбор средств</b>
+          </div>
+          <div class="fact">
+            <span class="fact-icon">▤</span>
+            <small>Бюджет</small>
+            <b>120 000 000 ₽</b>
+          </div>
+          <div class="fact">
+            <span class="fact-icon">✦</span>
+            <small>Цель сбора</small>
+            <b>60 000 000 ₽</b>
+          </div>
+        </section>
+
+        <section id="buy" class="panel buy-film">
+          <div class="buy-copy">
+            <h2>Купите часть фильма</h2>
+            <p>
+              Вы можете купить пиксель на экране фильма и стать его частью.
+              Ваше имя или любое сообщение появится в выбранном месте фильма на
+              долю секунды.
+            </p>
+            <div class="timeline">
+              <div class="zone zone-red">
+                <b>Начало</b>
+                <span>0:00 – 10:00</span>
+                <small>премиум зона</small>
+              </div>
+              <div class="zone">
+                <b>Середина</b>
+                <span>10:00 – 80:00</span>
+                <small>стандартная зона</small>
+              </div>
+              <div class="zone zone-red">
+                <b>Конец</b>
+                <span>80:00 – 90:00</span>
+                <small>премиум зона</small>
+              </div>
+            </div>
+            <div class="waveform" aria-hidden="true">
+              <i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i>
+              <i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i>
+              <i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i>
+              <i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i>
+            </div>
+            <div class="price-row">
+              <div><strong>10 000 ₽</strong><span>за 1 пиксель</span></div>
+              <div><strong>100 ₽</strong><span>за 1 пиксель</span></div>
+              <div><strong>10 000 ₽</strong><span>за 1 пиксель</span></div>
+            </div>
+            <a class="red-button" href="https://t.me/narek8282">Купить пиксель</a>
+          </div>
+
+          <div class="frame-preview">
+            <h3>Кадр из фильма</h3>
+            <div class="pixel-frame">
+              <img src="assets/hero-anti-film.png" alt="Кадр из фильма" />
+              <span class="pixel-cell"></span>
+              <div class="pixel-tooltip">
+                Ваш пиксель<br />
+                <b>x: 130 / y: 100</b><br />
+                00:12:35
+              </div>
+            </div>
+            <div class="progress-box">
+              <span>Всего пикселей в фильме</span>
+              <b>8 294 400</b>
+              <div class="progress"><i style="width: 26%"></i></div>
+              <strong>2 153 884 (26%)</strong>
+            </div>
+          </div>
+        </section>
+
+        <aside class="panel purchase-panel">
+          <h2>Купить пиксель</h2>
+          <ol class="steps">
+            <li>
+              <b>1. Выберите зону</b>
+              <div class="zone-buttons">
+                <button>Начало<br /><span>0:00 – 10:00</span></button>
+                <button class="active">Середина<br /><span>10:00 – 80:00</span></button>
+                <button>Конец<br /><span>80:00 – 90:00</span></button>
+              </div>
+            </li>
+            <li>
+              <b>2. Выберите кадр</b>
+              <div class="thumb-strip">
+                <button>‹</button>
+                <img src="assets/hero-anti-film.png" alt="" />
+                <img src="assets/hero-anti-film.png" alt="" />
+                <button>›</button>
+              </div>
+            </li>
+            <li>
+              <b>3. Выберите пиксель на кадре</b>
+              <div class="mini-frame">
+                <img src="assets/hero-anti-film.png" alt="" />
+                <span></span>
+              </div>
+            </li>
+            <li>
+              <b>4. Подтвердите покупку</b>
+              <div class="checkout">
+                <p>Время в фильме: <b>00:23:45</b></p>
+                <p>Координаты: <b>x: 1280 / y: 720</b></p>
+                <p>Цена: <b>100 ₽</b></p>
+                <a href="https://t.me/narek8282">Купить пиксель</a>
+              </div>
+            </li>
+            <li>
+              <b>5. Или купите несколько пикселей</b>
+              <div class="packs">
+                <button>10 пикселей<br /><strong>900 ₽</strong></button>
+                <button>100 пикселей<br /><strong>8 000 ₽</strong></button>
+                <button>1 000 пикселей<br /><strong>70 000 ₽</strong></button>
+              </div>
+            </li>
+          </ol>
+        </aside>
+
+        <section id="how" class="panel how-panel">
+          <h2>Как это работает</h2>
+          <div class="number-list">
+            <article><b>1</b><div><h3>Выберите зону</h3><p>Начало, середина или конец фильма</p></div></article>
+            <article><b>2</b><div><h3>Выберите пиксель</h3><p>Выберите свободный пиксель на кадре фильма</p></div></article>
+            <article><b>3</b><div><h3>Оплатите</h3><p>Оплатите выбранный пиксель удобным способом</p></div></article>
+            <article><b>4</b><div><h3>Попадите в фильм</h3><p>Ваш пиксель появится в финальной версии</p></div></article>
+          </div>
+        </section>
+
+        <section class="panel get-panel">
+          <h2>Что вы получаете</h2>
+          <div class="benefit-grid">
+            <article><span>▧</span><p>Ваш пиксель или логотип появится в фильме</p></article>
+            <article><span>▤</span><p>Цифровой сертификат участника</p></article>
+            <article><span>☰</span><p>Ваше имя в титрах фильма</p></article>
+            <article><span>◎</span><p>Вы помогаете создать уникальный фильм</p></article>
+            <article><span>▻</span><p>Доступ к онлайн-премьере и закрытым показам</p></article>
+            <article><span>✶</span><p>Ваша поддержка становится частью истории</p></article>
+          </div>
+        </section>
+
+        <section id="trailer" class="panel trailer-panel">
+          <h2>Трейлер фильма</h2>
+          <div class="video-card">
+            <img src="assets/hero-anti-film.png" alt="Трейлер фильма" />
+            <span class="play-large">▶</span>
+            <div class="player-line"><i></i></div>
+          </div>
+        </section>
+
+        <section id="news" class="panel news-panel">
+          <h2>Новости проекта</h2>
+          <article><img src="assets/hero-anti-film.png" alt="" /><div><b>Съемки в Токио завершены</b><span>12 июня 2026</span></div></article>
+          <article><img src="assets/hero-anti-film.png" alt="" /><div><b>Новый кадр из фильма</b><span>5 мая 2026</span></div></article>
+          <article><img src="assets/hero-anti-film.png" alt="" /><div><b>Интервью с креативным директором</b><span>21 апреля 2026</span></div></article>
+          <a href="https://t.me/narek8282">Смотреть все новости →</a>
+        </section>
+
+        <aside class="panel premiere-panel">
+          <h2>Премьера и показы</h2>
           <p>
-            Early brands can become part of the first version before the project
-            opens wider in the US.
+            Фильм выйдет в 2026 году и будет показан в кинотеатрах, на
+            фестивалях и онлайн.
           </p>
-        </div>
-      </section>
+          <div class="premiere-icons">
+            <div><span>▤</span><b>Кинотеатральный прокат</b></div>
+            <div><span>▶</span><b>Онлайн-премьера для спонсоров</b></div>
+            <div><span>♕</span><b>Международные фестивали</b></div>
+          </div>
+          <a class="outline-button" href="https://t.me/narek8282">Поддержать проект</a>
+        </aside>
 
-      <section id="slots" class="section">
-        <div class="section-head">
-          <p class="eyebrow">Early slots</p>
-          <h2>Simple places to appear.</h2>
-        </div>
-        <div class="slot-grid">
-          <article>
-            <span>01</span>
-            <h3>5-second placement</h3>
-            <p>A short brand appearance inside the anti-film.</p>
-          </article>
-          <article>
-            <span>02</span>
-            <h3>Paid message</h3>
-            <p>A ticker, warning, title card, or absurd interruption.</p>
-          </article>
-          <article>
-            <span>03</span>
-            <h3>Screen wall</h3>
-            <p>A logo or product placed inside a cinematic ad surface.</p>
-          </article>
-          <article>
-            <span>04</span>
-            <h3>Credits slot</h3>
-            <p>A visible supporter name in the project credits.</p>
-          </article>
-        </div>
-      </section>
+        <aside id="team" class="panel team-panel">
+          <h2>Команда</h2>
+          <div class="team-grid">
+            <article><div class="portrait p1"></div><b>Нарек Назарян</b><span>режиссер, продюсер</span></article>
+            <article><div class="portrait p2"></div><b>Иван Старов</b><span>креативный директор</span></article>
+            <article><div class="portrait p3"></div><b>Анна Мельникова</b><span>оператор</span></article>
+            <article><div class="portrait p4"></div><b>Арман Мартиросян</b><span>монтажер</span></article>
+          </div>
+          <a class="outline-button" href="https://t.me/narek8282">Вся команда</a>
+        </aside>
 
-      <section class="section quote">
-        <p>
-          If marketing can sell anything, can it sell a film that tells people
-          not to watch it?
-        </p>
-      </section>
+        <section class="panel cta-panel">
+          <div>
+            <h2>Станьте частью фильма</h2>
+            <p>История рекламы — это наша история</p>
+          </div>
+          <a class="red-button" href="https://t.me/narek8282">Купить пиксель</a>
+          <div class="sold">
+            <span>Уже куплено пикселей</span>
+            <b>2 153 884 из 8 294 400</b>
+          </div>
+        </section>
+      </main>
 
-      <section id="contact" class="section contact">
-        <div>
-          <p class="eyebrow">Early participant request</p>
-          <h2>Want your ad here?</h2>
-          <p>
-            Send your brand, link, and the type of slot you want to explore. No
-            call needed. The next step is a short one-page concept.
-          </p>
-        </div>
-        <div class="contact-actions">
-          <a
-            class="button primary"
-            href="mailto:hello@youradcouldbehere.com?subject=Early%20slot%20request&body=Hi%2C%20I%20want%20to%20see%20the%201-page%20concept.%0A%0ABrand%3A%0AWebsite%2FInstagram%3A%0AInterested%20slot%3A"
-          >
-            Email request
-          </a>
-          <a class="button secondary" href="https://t.me/narek8282">Telegram</a>
-        </div>
-      </section>
-    </main>
-
-    <footer class="site-footer">
-      <span>Your Ad Could Be Here</span>
-      <span>Advertising is the story.</span>
-    </footer>
+      <footer class="footer" id="faq">
+        <span>© 2026 Ваша Реклама</span>
+        <span>Все права защищены</span>
+        <nav>
+          <a href="#about">О фильме</a>
+          <a href="#how">Как это работает</a>
+          <a href="https://t.me/narek8282">Контакты</a>
+        </nav>
+      </footer>
+    </div>
   </body>
 </html>
