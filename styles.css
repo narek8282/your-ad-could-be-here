@@ -84,7 +84,7 @@ h3,
 }
 
 h1 {
-  font-size: clamp(64px, 8.8vw, 140px);
+  font-size: clamp(58px, 6.8vw, 106px);
   font-stretch: condensed;
   font-weight: 950;
   letter-spacing: 0;
@@ -128,7 +128,7 @@ p {
   border: 1px solid var(--line);
   display: grid;
   grid-template-columns: 220px 1fr 92px;
-  min-height: 58px;
+  min-height: 48px;
   padding: 0 16px;
   position: sticky;
   top: 8px;
@@ -136,7 +136,7 @@ p {
 }
 
 .logo {
-  font-size: 28px;
+  font-size: 22px;
   font-weight: 950;
   line-height: 0.9;
 }
@@ -145,7 +145,7 @@ p {
   align-items: center;
   color: #b9bfc1;
   display: flex;
-  font-size: 12px;
+  font-size: 11px;
   font-weight: 800;
   gap: 30px;
   justify-content: center;
@@ -201,7 +201,7 @@ p {
 
 .hero-panel {
   grid-column: span 8;
-  min-height: 560px;
+  min-height: 440px;
 }
 
 .hero-media {
@@ -228,7 +228,7 @@ p {
 
 .hero-copy {
   max-width: 430px;
-  padding: 78px 36px;
+  padding: 56px 34px;
   position: relative;
   z-index: 2;
 }
@@ -236,7 +236,7 @@ p {
 .redline {
   color: var(--red);
   font-family: "Arial Narrow", "Roboto Condensed", Impact, sans-serif;
-  font-size: 24px;
+  font-size: 20px;
   font-weight: 950;
   letter-spacing: 0;
   line-height: 1.05;
@@ -342,7 +342,7 @@ p {
   border-right: 1px solid var(--line);
   display: grid;
   gap: 4px;
-  min-height: 130px;
+  min-height: 104px;
   padding: 24px 28px;
 }
 
