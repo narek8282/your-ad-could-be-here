@@ -606,17 +606,49 @@
         .stage {
           aspect-ratio: 9 / 16;
           max-height: none;
-          min-height: 720px;
+          min-height: 760px;
           width: 100%;
         }
 
         h1,
         .hero-copy h1 {
-          font-size: clamp(50px, 17vw, 78px);
+          font-size: clamp(38px, 11.6vw, 54px);
+          line-height: 0.86;
+        }
+
+        .hero-copy h1 {
+          font-size: clamp(44px, 13vw, 62px);
         }
 
         .subtitle {
+          font-size: 13px;
+          line-height: 1.36;
           max-width: 88%;
+        }
+
+        .kicker,
+        .page-num {
+          font-size: 9px;
+        }
+
+        .hero-copy {
+          left: 7%;
+          top: 10%;
+          width: 86%;
+        }
+
+        .hero-copy .subtitle {
+          margin: 18px 0 24px;
+        }
+
+        .top-copy {
+          left: 7%;
+          right: 7%;
+          top: 7%;
+        }
+
+        .top-copy .subtitle {
+          margin-top: 14px;
         }
 
         .two-panel,
@@ -625,8 +657,9 @@
         }
 
         .two-panel {
-          height: 46%;
-          top: 43%;
+          gap: 10px;
+          height: 39%;
+          top: 51%;
         }
 
         .label-row {
@@ -634,22 +667,46 @@
         }
 
         .owned-grid {
+          gap: 5px;
           grid-template-columns: repeat(4, 1fr);
         }
 
+        .brand-tile,
+        .pixel {
+          min-height: 32px;
+        }
+
         .museum {
-          height: 34%;
+          height: 30%;
           left: 7%;
-          top: 48%;
+          top: 50%;
           width: 86%;
         }
 
+        .film-frame {
+          width: 82%;
+        }
+
         .stats {
+          bottom: 3%;
+          gap: 8px;
           grid-template-columns: 1fr;
         }
 
+        .stat {
+          padding-top: 8px;
+        }
+
+        .stat strong {
+          font-size: 25px;
+        }
+
+        .stat span {
+          font-size: 8px;
+        }
+
         .grid-layout {
-          top: 40%;
+          top: 43%;
         }
 
         .slot-list {
@@ -657,18 +714,54 @@
         }
 
         .pixel-grid {
-          height: 300px;
+          gap: 3px;
+          height: 285px;
+          padding: 10px;
+        }
+
+        .tooltip {
+          font-size: 9px;
+          left: 32%;
+          padding: 8px 9px;
+          top: 55%;
         }
 
         .heatmap {
           gap: 3px;
           grid-template-columns: repeat(11, 1fr);
-          height: 36%;
-          top: 50%;
+          height: 34%;
+          padding: 10px;
+          top: 52%;
+        }
+
+        .progress {
+          bottom: 6%;
+          height: 38px;
+        }
+
+        .progress span {
+          font-size: 8px;
         }
 
         .qr {
           display: none;
+        }
+
+        .center-line {
+          font-size: clamp(24px, 7.8vw, 32px);
+          top: 56%;
+          width: 94%;
+        }
+
+        .slide-6-cta {
+          left: 7%;
+          top: 78%;
+        }
+
+        .contact {
+          bottom: 7%;
+          font-size: 10px;
+          left: 7%;
         }
       }
     </style>
