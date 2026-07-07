@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Engine - Your Ad Could Be Here</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script type="importmap">
+      {"imports":{"three":"https://unpkg.com/three@0.166.1/build/three.module.js"}}
+    </script>
+  </head>
+  <body data-page="engine">
+    <canvas id="webgl" aria-hidden="true"></canvas>
+    <div class="scanlines" aria-hidden="true"></div>
+    <div class="noise" aria-hidden="true"></div>
+    <header class="site-header">
+      <a class="brand" href="index.html"><span class="brand-glyph">Y</span><span>Your Ad Could Be Here</span></a>
+      <nav class="nav"><a href="concept.html">Concept</a><a class="active" href="engine.html">Engine</a><a href="slots.html">Slot Market</a><a href="contact.html">Contact</a></nav>
+      <a class="header-action" href="contact.html">Request Access</a>
+    </header>
+    <main class="page-shell">
+      <section class="page-hero compact">
+        <p class="kicker">Technical layer</p>
+        <h1>Mathematical motion system.</h1>
+        <p>The visual field uses parametric orbital equations, instanced 3D panels, shader glow, pointer deformation, and a 2D analytic overlay.</p>
+      </section>
+      <section class="engine-grid">
+        <article class="code-panel">
+<pre><code>for each adSurface:
+  radius = 4.5 + sin(i * 0.37) * 2.1
+  x = sin(t * speed + i) * radius
+  y = cos(t * 0.31 + i * phi) * 1.8
+  z = cos(t * speed + i) * radius
+  rotate toward camera
+  modulate glow by marketNoise(t, i)</code></pre>
+        </article>
+        <article class="module-card"><span class="module-index">GPU</span><h2>Instanced surfaces</h2><p>Many ad panels share one geometry and update through matrix transforms.</p></article>
+        <article class="module-card"><span class="module-index">MATH</span><h2>Parametric curves</h2><p>The site uses equations as a design material, not just decorative CSS animation.</p></article>
+        <article class="module-card"><span class="module-index">INPUT</span><h2>Pointer gravity</h2><p>Mouse and touch subtly bend the camera, field rotation, and overlay vectors.</p></article>
+      </section>
+    </main>
+    <footer class="site-footer"><span>Your Ad Could Be Here</span><span>Engine layer</span></footer>
+    <script type="module" src="script.js"></script>
+  </body>
+</html>

@@ -1,6 +1,6 @@
 # Your Ad Could Be Here
 
-Static English landing page for a 3D cinematic anti-film campaign by an Armenian creator.
+Static English multi-page WebGL site for a 3D anti-film campaign by an Armenian creator.
 
 ## Hosting
 
@@ -12,10 +12,13 @@ The site is designed to run for free on GitHub Pages.
 
 ## Files
 
-- `index.html` - page markup
+- `index.html` - 3D attention engine homepage
+- `concept.html` - concept architecture page
+- `engine.html` - technical motion system page
+- `slots.html` - sponsor slot market page
+- `contact.html` - early participant request page
 - `styles.css` - responsive visual system
-- `script.js` - animated signal canvas
-- `assets/hero-anti-film.png` - generated cinematic hero asset
+- `script.js` - Three.js WebGL scene, instanced panels, particles, and parametric motion
 - `CNAME` - custom domain for GitHub Pages
 
 ## Contact Flow

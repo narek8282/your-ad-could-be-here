@@ -3,186 +3,117 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#050506" />
+    <meta name="theme-color" content="#030306" />
     <meta
       name="description"
-      content="Your Ad Could Be Here is a 3D cinematic anti-film campaign where advertising becomes the story."
+      content="Your Ad Could Be Here is a technical 3D anti-film interface where advertising becomes the simulation."
     />
     <meta property="og:title" content="Your Ad Could Be Here" />
     <meta
       property="og:description"
-      content="A premium 3D anti-film campaign built from sponsor slots, paid messages, and cinematic ad surfaces."
+      content="A WebGL anti-film system with mathematical animation, sponsor surfaces, and a live attention engine."
     />
-    <meta property="og:image" content="assets/hero-anti-film.png" />
-    <title>Your Ad Could Be Here</title>
+    <title>Your Ad Could Be Here - 3D Attention Engine</title>
     <link rel="stylesheet" href="styles.css" />
+    <script type="importmap">
+      {
+        "imports": {
+          "three": "https://unpkg.com/three@0.166.1/build/three.module.js"
+        }
+      }
+    </script>
   </head>
-  <body>
-    <canvas class="signal-canvas" aria-hidden="true"></canvas>
-    <div class="grain" aria-hidden="true"></div>
+  <body data-page="home">
+    <canvas id="webgl" aria-hidden="true"></canvas>
+    <div class="scanlines" aria-hidden="true"></div>
+    <div class="noise" aria-hidden="true"></div>
 
     <header class="site-header">
-      <a class="brand" href="#top" aria-label="Your Ad Could Be Here">
-        <span class="brand-mark">YACBH</span>
+      <a class="brand" href="index.html" aria-label="Your Ad Could Be Here home">
+        <span class="brand-glyph">Y</span>
         <span>Your Ad Could Be Here</span>
       </a>
-      <nav class="nav" aria-label="Primary navigation">
-        <a href="#film">Film</a>
-        <a href="#market">Market</a>
-        <a href="#slots">Slots</a>
-        <a href="#launch">Launch</a>
-        <a href="#contact">Contact</a>
+      <nav class="nav" aria-label="Primary">
+        <a href="concept.html">Concept</a>
+        <a href="engine.html">Engine</a>
+        <a href="slots.html">Slot Market</a>
+        <a href="contact.html">Contact</a>
       </nav>
-      <a class="header-cta" href="#contact">Request Slot</a>
+      <a class="header-action" href="contact.html">Request Access</a>
     </header>
 
-    <main id="top">
-      <section class="hero" aria-label="Hero">
-        <div class="hero-stage">
-          <img
-            class="hero-art"
-            src="assets/hero-anti-film.png"
-            alt="A cinematic control room facing a wall of advertising screens."
-          />
-          <div class="screen-arc" aria-hidden="true">
-            <span></span><span></span><span></span><span></span><span></span><span></span>
-            <span></span><span></span><span></span><span></span><span></span><span></span>
-            <span></span><span></span><span></span><span></span><span></span><span></span>
-            <span></span><span></span><span></span><span></span><span></span><span></span>
-          </div>
-          <div class="orbital-ring" aria-hidden="true"></div>
-        </div>
-
+    <main>
+      <section class="hero-lab">
         <div class="hero-copy">
-          <p class="eyebrow">Cinematic anti-film / sponsor experiment</p>
+          <p class="kicker">3D attention engine / anti-film protocol</p>
           <h1>
-            Your Ad
-            <span>Could Be</span>
-            Here
+            Advertising
+            <span>as a living</span>
+            simulation.
           </h1>
           <p class="hero-text">
-            A 3D cinematic website for an anti-film where ads do not interrupt the story.
-            Advertising becomes the story.
+            A technical WebGL interface for an anti-film built from sponsor slots,
+            paid messages, pixel surfaces, and cinematic interruptions.
           </p>
           <div class="hero-actions">
-            <a class="button primary" href="#contact">Request early slot</a>
-            <a class="button ghost" href="#film">Explore concept</a>
+            <a class="button primary" href="slots.html">Enter slot market</a>
+            <a class="button secondary" href="engine.html">Inspect engine</a>
           </div>
         </div>
 
-        <aside class="hero-panel">
-          <p>Live campaign status</p>
-          <strong>Early sponsor grid is open</strong>
-          <div class="metric-row">
-            <span><b>01</b> English only</span>
-            <span><b>3D</b> cinematic UI</span>
-            <span><b>$0</b> hosting cost</span>
+        <aside class="telemetry-card">
+          <div class="telemetry-head">
+            <span>Live system</span>
+            <b>Signal stable</b>
+          </div>
+          <div class="telemetry-grid">
+            <span><b data-counter="4096">4096</b> ad nodes</span>
+            <span><b data-counter="128">128</b> orbital paths</span>
+            <span><b data-counter="37">37</b> market layers</span>
+            <span><b data-counter="0">0</b> hosting cost</span>
           </div>
         </aside>
+
+        <div class="equation-strip" aria-label="Animation equations">
+          <span>x = sin(t * 0.73 + i) * r</span>
+          <span>y = cos(t * 0.41 + i * phi) * r</span>
+          <span>z = sin(t + i * 0.017) * depth</span>
+        </div>
       </section>
 
-      <section id="film" class="intro-grid">
-        <article class="panel large">
-          <p class="eyebrow">01 / The film</p>
-          <h2>A movie made from the things movies normally hide.</h2>
+      <section class="system-grid" aria-label="System modules">
+        <article class="module-card wide">
+          <span class="module-index">01</span>
+          <h2>Not a landing page. A control room.</h2>
           <p>
-            Your Ad Could Be Here turns sponsorship into the plot. Brands, paid messages,
-            pixels, credits, product shots, fake warnings, and empty ad surfaces become the
-            film itself.
+            The site is structured like a technical console: a visual engine, a
+            slot market, an attention model, and a contact path. It should feel
+            closer to an experimental product demo than a normal movie website.
           </p>
         </article>
-        <article class="panel stats">
-          <div><span>Format</span><strong>Anti-film</strong></div>
-          <div><span>Market</span><strong>US / Diaspora</strong></div>
-          <div><span>Stage</span><strong>Early slots</strong></div>
-          <div><span>Hosting</span><strong>GitHub Pages</strong></div>
+        <article class="module-card">
+          <span class="module-index">02</span>
+          <h3>WebGL core</h3>
+          <p>Thousands of moving surfaces orbit inside a perspective field.</p>
+        </article>
+        <article class="module-card">
+          <span class="module-index">03</span>
+          <h3>Mathematical motion</h3>
+          <p>Parametric curves, pointer deformation, depth sorting, and glow layers.</p>
+        </article>
+        <article class="module-card">
+          <span class="module-index">04</span>
+          <h3>Multi-page structure</h3>
+          <p>Concept, engine, slot market, and contact screens share one 3D system.</p>
         </article>
       </section>
 
-      <section id="market" class="market">
-        <div class="section-copy">
-          <p class="eyebrow">02 / Attention market</p>
-          <h2>Every surface is for sale, but the joke is honest.</h2>
-          <p>
-            The project is built for cold outreach: one link should feel strange, expensive,
-            and clear enough for a brand to ask for the one-page concept without needing a call.
-          </p>
-        </div>
-        <div class="market-stage" aria-hidden="true">
-          <div class="cube cube-a"></div>
-          <div class="cube cube-b"></div>
-          <div class="cube cube-c"></div>
-          <div class="depth-card">
-            <span>Your Ad Could Be Here</span>
-            <b>Attention is the plot.</b>
-          </div>
-        </div>
-      </section>
-
-      <section id="slots" class="slots">
-        <div class="section-copy">
-          <p class="eyebrow">03 / Available surfaces</p>
-          <h2>Slot types that feel like cinema, not banner ads.</h2>
-        </div>
-        <div class="slot-grid">
-          <article class="slot-card">
-            <div class="slot-visual wall"></div>
-            <span>01</span>
-            <h3>Screen wall</h3>
-            <p>A sponsor appears inside a curved wall of glowing ad surfaces.</p>
-          </article>
-          <article class="slot-card featured">
-            <div class="slot-visual pixel"></div>
-            <span>02</span>
-            <h3>Pixel placement</h3>
-            <p>A small paid square becomes part of the giant frame.</p>
-          </article>
-          <article class="slot-card">
-            <div class="slot-visual ticker"></div>
-            <span>03</span>
-            <h3>Paid message</h3>
-            <p>A ticker, title card, warning, or absurd sponsored interruption.</p>
-          </article>
-        </div>
-      </section>
-
-      <section id="launch" class="launch">
-        <div class="launch-media">
-          <img src="assets/hero-anti-film.png" alt="Cinematic screen wall preview." />
-          <button type="button" aria-label="Trailer preview">
-            <span></span>
-          </button>
-        </div>
-        <div class="panel launch-copy">
-          <p class="eyebrow">04 / Launch path</p>
-          <h2>Built free. Designed to look expensive.</h2>
-          <ul>
-            <li>Static GitHub Pages site, no paid hosting.</li>
-            <li>English-only pitch for US and diaspora outreach.</li>
-            <li>Email and Telegram request flow, no backend required.</li>
-            <li>Premium 3D interface for a stronger first impression.</li>
-          </ul>
-        </div>
-      </section>
-
-      <section id="contact" class="contact">
+      <section class="cinema-band">
         <div>
-          <p class="eyebrow">Early participant request</p>
-          <h2>Want your ad here?</h2>
-          <p>
-            Send your brand, link, and the slot type you want to explore. No call needed.
-            The first step is a short one-page concept.
-          </p>
+          <p class="kicker">The pitch</p>
+          <h2>Every brand buys a surface. The surface becomes the film.</h2>
         </div>
-        <div class="contact-actions">
-          <a
-            class="button primary"
-            href="mailto:hello@youradcouldbehere.com?subject=Early%20slot%20request&body=Hi%2C%20I%20want%20to%20see%20the%201-page%20concept.%0A%0ABrand%3A%0AWebsite%2FInstagram%3A%0AInterested%20slot%3A"
-          >
-            Email request
-          </a>
-          <a class="button ghost" href="https://t.me/narek8282">Telegram</a>
-        </div>
+        <a class="button secondary" href="concept.html">Read concept</a>
       </section>
     </main>
 
@@ -191,6 +122,6 @@
       <span>Attention is the plot.</span>
     </footer>
 
-    <script src="script.js"></script>
+    <script type="module" src="script.js"></script>
   </body>
 </html>
