@@ -1,27 +1,28 @@
 # Your Ad Could Be Here
 
-Static MVP landing page for the anti-film / viral advertising stunt.
+Static bilingual landing page for a viral advertising anti-film by an Armenian creator.
 
-## Preview locally
+## Hosting
 
-Open `index.html` in a browser.
+The site is designed to run for free on GitHub Pages.
 
-## Recommended free hosting
+- Custom domain: `youradcouldbehere.com`
+- GitHub Pages source: `main` / `/root`
+- Paid hosting: not needed for the current MVP
 
-Use Netlify for the first version because the form in `index.html` is already prepared for Netlify Forms.
+## Files
 
-1. Create a free Netlify account.
-2. Drag and drop this folder into Netlify Deploys.
-3. In Netlify, add the custom domain: `youradcouldbehere.com`.
-4. In the domain registrar, point DNS to Netlify using the records Netlify provides.
-5. After DNS is active, test the form once.
+- `index.html` - page markup
+- `styles.css` - responsive visual system
+- `script.js` - RU/EN language switcher
+- `assets/hero-anti-film.png` - generated cinematic hero asset
+- `CNAME` - custom domain for GitHub Pages
 
-## Current form
+## Contact Flow
 
-The form name is `early-slot`.
+The MVP uses free contact paths instead of a paid backend:
 
-Fields:
-- brand
-- email
-- slot
-- message
+- email link with prefilled request text
+- Telegram link
+
+If a proper form is needed later, use a free tier such as Formspree, Tally, Google Forms, or Netlify Forms after deciding where responses should be collected.

@@ -3,247 +3,194 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#050607" />
     <meta
       name="description"
-      content="Ваша реклама - антифильм, созданный из рекламных мест, сообщений и брендов."
+      content="Your Ad Could Be Here is a viral anti-film by an Armenian creator, built from ads, sponsor slots, paid messages, and pixel placements."
     />
-    <meta property="og:title" content="Ваша реклама" />
+    <meta property="og:title" content="Your Ad Could Be Here" />
     <meta
       property="og:description"
-      content="Первый рекламный антифильм, где бренд может стать частью истории."
+      content="A movie where advertising becomes the story. Early slots are open for Armenian and diaspora brands."
     />
-    <meta property="og:image" content="assets/hero-cinema-ads.png" />
-    <title>Ваша реклама</title>
+    <meta property="og:image" content="assets/hero-anti-film.png" />
+    <title>Your Ad Could Be Here</title>
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <header class="topbar">
-      <a class="brand" href="#top">ВАША РЕКЛАМА</a>
-      <nav class="nav" aria-label="Главная навигация">
-        <a href="#film">О фильме</a>
-        <a href="#how">Как это работает</a>
-        <a href="#buy">Купить пиксель</a>
-        <a href="#team">Команда</a>
-        <a href="#news">Новости</a>
+    <canvas class="signal-canvas" aria-hidden="true"></canvas>
+
+    <header class="site-header">
+      <a class="brand" href="#top" aria-label="Your Ad Could Be Here">
+        <span>YACBH</span>
+        <strong>Your Ad Could Be Here</strong>
+      </a>
+      <nav class="nav" aria-label="Sections">
+        <a href="#idea" data-i18n="navIdea">Идея</a>
+        <a href="#slots" data-i18n="navSlots">Слоты</a>
+        <a href="#motion" data-i18n="navMotion">Опыт</a>
+        <a href="#contact" data-i18n="navContact">Заявка</a>
       </nav>
-      <a class="login" href="mailto:hello@youradcouldbehere.com">Войти</a>
+      <div class="lang-switch" aria-label="Language">
+        <button class="active" type="button" data-lang="ru">RU</button>
+        <button type="button" data-lang="en">EN</button>
+      </div>
     </header>
 
-    <main id="top" class="page-shell">
-      <section class="hero panel">
+    <main id="top">
+      <section class="hero">
         <img
           class="hero-image"
-          src="assets/hero-cinema-ads.png"
-          alt="Человек смотрит на стену из рекламных экранов в темном кинозале."
+          src="assets/hero-anti-film.png"
+          alt="A cinematic wall of blank advertising screens in a dark control room."
         />
-        <div class="hero-shade"></div>
-        <div class="hero-copy">
-          <p class="kicker">Первый в мире фильм, созданный из рекламы</p>
-          <h1>ВАША<br />РЕКЛАМА</h1>
-          <p>
-            Это не рекламная площадка. Это фильм о рекламе, внимании, брендах и
-            том, как маркетинг превращает любую историю в экран.
+        <div class="hero-wash"></div>
+        <div class="hero-grid" aria-hidden="true"></div>
+
+        <div class="hero-inner">
+          <p class="micro" data-i18n="heroMicro">A viral anti-film by an Armenian creator</p>
+          <h1>
+            <span>Your Ad</span>
+            <span>Could Be</span>
+            <span>Here</span>
+          </h1>
+          <p class="hero-text" data-i18n="heroText">
+            Фильм, где реклама не прерывает историю. Реклама становится историей.
           </p>
-          <a class="play-link" href="#trailer" aria-label="Смотреть трейлер">
-            <span>▶</span> Смотреть трейлер
-          </a>
+          <div class="hero-actions">
+            <a class="button primary" href="#contact" data-i18n="heroCta">Запросить слот</a>
+            <a class="button secondary" href="#idea" data-i18n="heroAlt">Понять концепт</a>
+          </div>
         </div>
+
+        <aside class="status-deck" aria-label="Project signals">
+          <div>
+            <span data-i18n="signalOneLabel">Формат</span>
+            <strong data-i18n="signalOneValue">Anti-film / stunt</strong>
+          </div>
+          <div>
+            <span data-i18n="signalTwoLabel">Фокус</span>
+            <strong data-i18n="signalTwoValue">Diaspora first</strong>
+          </div>
+          <div>
+            <span data-i18n="signalThreeLabel">Старт</span>
+            <strong data-i18n="signalThreeValue">Early slots open</strong>
+          </div>
+        </aside>
       </section>
 
-      <aside id="film" class="panel about">
-        <h2>О фильме</h2>
-        <p>
-          «Ваша реклама» - антифильм, собранный из рекламных вставок,
-          спонсорских сообщений и купленных пикселей. Каждый участник становится
-          частью сюжета.
-        </p>
-        <div class="stats">
-          <strong><span>7</span> стран</strong>
-          <strong><span>200+</span> брендов</strong>
-          <strong><span>2 года</span> съемок</strong>
-        </div>
-        <a class="outline-button" href="#how">Подробнее о фильме</a>
-      </aside>
-
-      <section class="facts panel" aria-label="Ключевые данные">
-        <div>
-          <small>Формат</small>
-          <strong>документальный антифильм</strong>
-        </div>
-        <div>
-          <small>Хронометраж</small>
-          <strong>90 минут</strong>
-        </div>
-        <div>
-          <small>Статус</small>
-          <strong>сбор средств</strong>
-        </div>
-        <div>
-          <small>Бюджет</small>
-          <strong>$120 000</strong>
-        </div>
-        <div>
-          <small>Цель сбора</small>
-          <strong>$60 000</strong>
-        </div>
-      </section>
-
-      <section id="buy" class="panel buy">
-        <div class="buy-copy">
-          <p class="section-label">Купите часть фильма</p>
-          <h2>Ваш бренд может появиться прямо внутри антифильма.</h2>
-          <p>
-            Выберите зону, кадр или формат участия. Ваше имя, логотип или
-            короткое сообщение появится в выбранном месте фильма.
+      <section id="idea" class="chapter">
+        <div class="chapter-label">01 / Concept</div>
+        <div class="chapter-copy">
+          <p class="micro" data-i18n="ideaMicro">The movie about being sold to</p>
+          <h2 data-i18n="ideaTitle">Если внимание стало рынком, фильм тоже может стать рынком.</h2>
+          <p data-i18n="ideaText">
+            Проект собирается из брендов, платных сообщений, пустых рекламных экранов, титров, пикселей и абсурдных интеграций. Каждый участник покупает не баннер, а место в культурном эксперименте.
           </p>
-          <div class="timeline" aria-label="Зоны фильма">
-            <div class="zone hot">
-              <span>Начало</span>
-              <strong>$100-$1 000</strong>
-            </div>
-            <div class="zone">
-              <span>Середина</span>
-              <strong>$100-$500</strong>
-            </div>
-            <div class="zone hot">
-              <span>Конец</span>
-              <strong>$500-$5 000</strong>
-            </div>
-          </div>
-          <a class="red-button" href="mailto:hello@youradcouldbehere.com?subject=Early%20slot%20request">
-            Купить пиксель
+        </div>
+      </section>
+
+      <section class="manifesto" aria-label="Manifesto">
+        <div class="ticker" aria-hidden="true">
+          <span>Your Ad Could Be Here</span>
+          <span>Attention is the plot</span>
+          <span>Buy the interruption</span>
+          <span>Your Ad Could Be Here</span>
+        </div>
+        <div class="manifesto-grid">
+          <article>
+            <span>01</span>
+            <h3 data-i18n="mOneTitle">No normal plot</h3>
+            <p data-i18n="mOneText">Сюжет появляется из того, кто купил место, что он сказал и как это врезалось в кадр.</p>
+          </article>
+          <article>
+            <span>02</span>
+            <h3 data-i18n="mTwoTitle">No fake seriousness</h3>
+            <p data-i18n="mTwoText">Это честно абсурдный проект о том, как реклама съедает любую поверхность.</p>
+          </article>
+          <article>
+            <span>03</span>
+            <h3 data-i18n="mThreeTitle">No paid hosting needed</h3>
+            <p data-i18n="mThreeText">MVP живет бесплатно на GitHub Pages. Деньги лучше тратить на первые слоты и PR.</p>
+          </article>
+        </div>
+      </section>
+
+      <section id="slots" class="slots">
+        <div class="section-head">
+          <p class="micro" data-i18n="slotsMicro">Available surfaces</p>
+          <h2 data-i18n="slotsTitle">Каждый слот выглядит как часть фильма, а не как обычная реклама.</h2>
+        </div>
+
+        <div class="slot-cards">
+          <article class="slot-card">
+            <div class="slot-visual small-screen"></div>
+            <span>5 sec</span>
+            <h3 data-i18n="slotOneTitle">Scene placement</h3>
+            <p data-i18n="slotOneText">Бренд появляется как объект, экран, фраза или короткая визуальная вставка.</p>
+          </article>
+          <article class="slot-card hot">
+            <div class="slot-visual pixel-field"></div>
+            <span>Pixel</span>
+            <h3 data-i18n="slotTwoTitle">Pixel wall</h3>
+            <p data-i18n="slotTwoText">Место в сетке экранов, где маленький бренд может стать заметной частью большого кадра.</p>
+          </article>
+          <article class="slot-card">
+            <div class="slot-visual ticker-line"></div>
+            <span>Text</span>
+            <h3 data-i18n="slotThreeTitle">Ticker message</h3>
+            <p data-i18n="slotThreeText">Короткое платное сообщение, бегущая строка, титр или warning внутри фильма.</p>
+          </article>
+        </div>
+      </section>
+
+      <section id="motion" class="experience">
+        <div class="frame-stack" aria-hidden="true">
+          <div class="frame-card a"></div>
+          <div class="frame-card b"></div>
+          <div class="frame-card c"></div>
+        </div>
+        <div class="experience-copy">
+          <p class="micro" data-i18n="motionMicro">Designed for cold outreach</p>
+          <h2 data-i18n="motionTitle">Сайт должен быстро объяснять идею без звонка.</h2>
+          <p data-i18n="motionText">
+            Человек открывает ссылку, за 15 секунд понимает: это странно, визуально сильно и можно стать одним из первых участников до выхода проекта шире в США.
+          </p>
+          <ul>
+            <li data-i18n="motionOne">RU/EN переключатель для Армении, диаспоры и США.</li>
+            <li data-i18n="motionTwo">Заявка через email или Telegram, без платного backend.</li>
+            <li data-i18n="motionThree">Визуал держится на концепте: реклама как сюжет.</li>
+          </ul>
+        </div>
+      </section>
+
+      <section id="contact" class="contact">
+        <div>
+          <p class="micro" data-i18n="contactMicro">Early participant request</p>
+          <h2 data-i18n="contactTitle">Want your ad here?</h2>
+          <p data-i18n="contactText">
+            Напишите коротко бренд, ссылку и какой формат интересен. Сейчас открыты только первые ранние слоты.
+          </p>
+        </div>
+        <div class="contact-panel">
+          <a
+            class="button primary"
+            href="mailto:hello@youradcouldbehere.com?subject=Early%20slot%20request&body=Hi%2C%20I%20want%20to%20see%20the%201-page%20concept.%0A%0ABrand%3A%0AWebsite%2FInstagram%3A%0AInterested%20slot%3A"
+            data-i18n="emailCta"
+          >
+            Email request
           </a>
-        </div>
-        <div class="pixel-preview" aria-label="Превью пикселя">
-          <span class="grid-title">Кадр из фильма</span>
-          <div class="pixel-frame">
-            <img src="assets/hero-cinema-ads.png" alt="" />
-            <div class="pixel-dot"></div>
-            <div class="pixel-card">
-              Ваш пиксель<br />
-              <strong>1 250 / 1 500</strong><br />
-              $013
-            </div>
-          </div>
-          <div class="progress">
-            <span>Всего пикселей в фильме</span>
-            <strong>2 153 884 / 6 294 400</strong>
-            <div><i></i></div>
-          </div>
+          <a class="button secondary" href="https://t.me/narek8282" data-i18n="telegramCta">Telegram</a>
+          <span data-i18n="contactNote">No call needed. Send the concept first.</span>
         </div>
       </section>
-
-      <aside class="panel purchase">
-        <h2>Купить пиксель</h2>
-        <ol>
-          <li>
-            <span>1. Выберите зону</span>
-            <div class="choice-grid">
-              <button>Начало<br /><small>$100-$1 000</small></button>
-              <button class="active">Середина<br /><small>$100-$500</small></button>
-              <button>Конец<br /><small>$500-$5 000</small></button>
-            </div>
-          </li>
-          <li>
-            <span>2. Выберите формат</span>
-            <div class="frame-strip">
-              <img src="assets/hero-cinema-ads.png" alt="" />
-              <img src="assets/hero-cinema-ads.png" alt="" />
-              <img src="assets/hero-cinema-ads.png" alt="" />
-            </div>
-          </li>
-          <li>
-            <span>3. Подтвердите заявку</span>
-            <div class="summary">
-              <p>Время в фильме: 00:23:45</p>
-              <p>Координаты: X 1280 Y 720</p>
-              <strong>Цена: $100</strong>
-            </div>
-          </li>
-        </ol>
-        <a class="red-button full" href="mailto:hello@youradcouldbehere.com">Оставить заявку</a>
-      </aside>
-
-      <section id="how" class="panel how">
-        <div>
-          <p class="section-label">Как это работает</p>
-          <ol class="steps">
-            <li><span>1</span> Выберите зону фильма</li>
-            <li><span>2</span> Выберите пиксель, кадр или сообщение</li>
-            <li><span>3</span> Отправьте заявку</li>
-            <li><span>4</span> Попадите в фильм</li>
-          </ol>
-        </div>
-        <div>
-          <p class="section-label">Что вы получаете</p>
-          <div class="benefits">
-            <p>Ваш пиксель или рекламное сообщение в фильме</p>
-            <p>Имя бренда в титрах</p>
-            <p>Доступ к онлайн-премьере</p>
-            <p>Участие в истории проекта</p>
-          </div>
-        </div>
-      </section>
-
-      <section id="trailer" class="panel trailer">
-        <p class="section-label">Трейлер фильма</p>
-        <div class="video-box">
-          <img src="assets/hero-cinema-ads.png" alt="Кадр трейлера фильма" />
-          <button aria-label="Смотреть трейлер">▶</button>
-        </div>
-      </section>
-
-      <section id="news" class="panel news">
-        <p class="section-label">Новости проекта</p>
-        <article>
-          <img src="assets/hero-cinema-ads.png" alt="" />
-          <div>
-            <h3>Открыт набор первых брендов</h3>
-            <time>7 июля 2026</time>
-          </div>
-        </article>
-        <article>
-          <img src="assets/hero-cinema-ads.png" alt="" />
-          <div>
-            <h3>Сайт проекта запущен</h3>
-            <time>7 июля 2026</time>
-          </div>
-        </article>
-        <a href="mailto:hello@youradcouldbehere.com">Связаться с проектом →</a>
-      </section>
-
-      <aside class="panel premiere">
-        <h2>Премьера и показы</h2>
-        <p>
-          Фильм выйдет в 2026 году и будет показан онлайн для участников и
-          партнеров проекта.
-        </p>
-        <div class="premiere-icons">
-          <span>Кинотеатральный показ</span>
-          <span>Онлайн-премьера</span>
-          <span>Международные фестивали</span>
-        </div>
-        <a class="outline-button" href="mailto:hello@youradcouldbehere.com">Поддержать проект</a>
-      </aside>
-
-      <aside id="team" class="panel team">
-        <h2>Команда</h2>
-        <div class="team-grid">
-          <div><span></span><strong>Нарек Назарян</strong><small>идея и продюсирование</small></div>
-          <div><span></span><strong>Creative Lead</strong><small>визуальная система</small></div>
-          <div><span></span><strong>Brand Partners</strong><small>первые участники</small></div>
-          <div><span></span><strong>Film Crew</strong><small>производство</small></div>
-        </div>
-        <a class="outline-button" href="mailto:hello@youradcouldbehere.com">Связаться</a>
-      </aside>
     </main>
 
-    <footer class="footer">
-      <strong>Станьте частью фильма</strong>
-      <a class="red-button" href="mailto:hello@youradcouldbehere.com?subject=I%20want%20my%20ad%20here">
-        Купить пиксель
-      </a>
-      <span>© 2026 Ваша реклама</span>
+    <footer class="site-footer">
+      <strong>Your Ad Could Be Here</strong>
+      <span data-i18n="footerText">Attention is the plot.</span>
     </footer>
+
+    <script src="script.js"></script>
   </body>
 </html>
