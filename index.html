@@ -3,152 +3,132 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#030306" />
+    <meta name="theme-color" content="#080808" />
     <meta
       name="description"
-      content="Your Ad Could Be Here is an anti-film sold as advertising inventory before it exists."
+      content="Your Ad Could Be Here is an anti-film built entirely from ads, sponsor slots, and paid messages."
     />
     <meta property="og:title" content="Your Ad Could Be Here" />
     <meta
       property="og:description"
-      content="A cinematic anti-film where every sponsor slot, pixel, warning, title card, and paid message becomes the story."
+      content="An anti-film where advertising becomes the story."
     />
+    <meta property="og:image" content="assets/hero-anti-film.png" />
     <title>Your Ad Could Be Here</title>
     <link rel="stylesheet" href="styles.css" />
-    <script type="importmap">
-      {
-        "imports": {
-          "three": "https://unpkg.com/three@0.166.1/build/three.module.js"
-        }
-      }
-    </script>
   </head>
-  <body data-page="home">
-    <canvas id="webgl" aria-hidden="true"></canvas>
-    <div class="scanlines" aria-hidden="true"></div>
-    <div class="noise" aria-hidden="true"></div>
-
+  <body>
     <header class="site-header">
-      <a class="brand" href="index.html" aria-label="Your Ad Could Be Here home">
-        <span class="brand-glyph">AD</span>
-        <span>Your Ad Could Be Here</span>
-      </a>
-      <nav class="nav" aria-label="Primary">
-        <a href="concept.html">Film</a>
-        <a href="slots.html">Inventory</a>
-        <a href="engine.html">Engine</a>
-        <a href="contact.html">Contact</a>
+      <a class="brand" href="#top">Your Ad Could Be Here</a>
+      <nav class="nav" aria-label="Primary navigation">
+        <a href="#idea">Idea</a>
+        <a href="#slots">Slots</a>
+        <a href="#contact">Contact</a>
       </nav>
-      <a class="header-action" href="contact.html">Request Slot</a>
     </header>
 
-    <main>
-      <section class="hero-lab hero-market">
+    <main id="top">
+      <section class="hero">
         <div class="hero-copy">
-          <p class="kicker">Anti-film / live advertising inventory</p>
-          <h1>
-            Your Ad
-            <span>Could Be</span>
-            Here
-          </h1>
-          <p class="hero-text">
-            A film sold before it exists. Every sponsor slot, paid message,
-            warning label, product ghost, and pixel becomes part of the story.
+          <p class="eyebrow">Anti-film / advertising experiment</p>
+          <h1>Your Ad Could Be Here</h1>
+          <p class="lead">
+            A film built entirely from ads, sponsor slots, paid messages, and
+            branded interruptions. Advertising does not interrupt the story.
+            Advertising is the story.
           </p>
-          <div class="hero-actions">
-            <a class="button primary" href="contact.html">Request early slot</a>
-            <a class="button secondary" href="slots.html">View inventory</a>
+          <div class="actions">
+            <a class="button primary" href="#contact">Request early slot</a>
+            <a class="button secondary" href="#idea">Read the idea</a>
           </div>
         </div>
+        <figure class="hero-image">
+          <img
+            src="assets/hero-anti-film.png"
+            alt="A cinematic wall of advertising screens."
+          />
+        </figure>
+      </section>
 
-        <aside class="market-console" aria-label="Live inventory console">
-          <div class="console-top">
-            <span>Inventory status</span>
-            <b>First layer open</b>
-          </div>
-          <div class="console-grid">
-            <button type="button" data-slot="hero">Hero screen</button>
-            <button type="button" data-slot="ticker">Paid ticker</button>
-            <button type="button" data-slot="warning">Warning card</button>
-            <button type="button" data-slot="pixel">Pixel noise</button>
-            <button type="button" data-slot="credits">End credits</button>
-            <button type="button" data-slot="object">Product ghost</button>
-          </div>
-        </aside>
-
-        <div class="equation-strip" aria-label="Project mechanics">
-          <span>brand buys surface</span>
-          <span>surface becomes scene</span>
-          <span>scene becomes campaign</span>
+      <section id="idea" class="section split">
+        <div>
+          <p class="eyebrow">The idea</p>
+          <h2>A movie about advertising, made out of advertising.</h2>
+        </div>
+        <div>
+          <p>
+            Your Ad Could Be Here is an absurd anti-film. Instead of hiding
+            sponsors inside a normal story, the project turns sponsors into the
+            story itself: title cards, warnings, screen walls, credits, product
+            shots, and paid messages.
+          </p>
+          <p>
+            Early brands can become part of the first version before the project
+            opens wider in the US.
+          </p>
         </div>
       </section>
 
-      <section class="thesis">
-        <p class="kicker">The simple version</p>
-        <h2>A movie about advertising, built entirely from advertising.</h2>
+      <section id="slots" class="section">
+        <div class="section-head">
+          <p class="eyebrow">Early slots</p>
+          <h2>Simple places to appear.</h2>
+        </div>
+        <div class="slot-grid">
+          <article>
+            <span>01</span>
+            <h3>5-second placement</h3>
+            <p>A short brand appearance inside the anti-film.</p>
+          </article>
+          <article>
+            <span>02</span>
+            <h3>Paid message</h3>
+            <p>A ticker, warning, title card, or absurd interruption.</p>
+          </article>
+          <article>
+            <span>03</span>
+            <h3>Screen wall</h3>
+            <p>A logo or product placed inside a cinematic ad surface.</p>
+          </article>
+          <article>
+            <span>04</span>
+            <h3>Credits slot</h3>
+            <p>A visible supporter name in the project credits.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section quote">
         <p>
-          The site should make a brand understand the idea without a call: this is not a
-          normal sponsorship deck. It is a public stunt where buying a slot means entering
-          the story of the anti-film itself.
+          If marketing can sell anything, can it sell a film that tells people
+          not to watch it?
         </p>
       </section>
 
-      <section class="inventory-board" aria-label="Featured slot inventory">
-        <article>
-          <span>01</span>
-          <h3>Main interruption</h3>
-          <p>A brand appears as the moment the film breaks itself.</p>
-        </article>
-        <article>
-          <span>02</span>
-          <h3>Screen wall</h3>
-          <p>Logo, product, or message embedded inside the 3D ad field.</p>
-        </article>
-        <article>
-          <span>03</span>
-          <h3>Paid warning</h3>
-          <p>An absurd disclaimer, alert, or fake system message.</p>
-        </article>
-        <article>
-          <span>04</span>
-          <h3>Pixel claim</h3>
-          <p>A tiny paid square inside the archive of the project.</p>
-        </article>
-      </section>
-
-      <section class="proof-strip">
+      <section id="contact" class="section contact">
         <div>
-          <span data-counter="0">0</span>
-          <p>paid hosting required</p>
+          <p class="eyebrow">Early participant request</p>
+          <h2>Want your ad here?</h2>
+          <p>
+            Send your brand, link, and the type of slot you want to explore. No
+            call needed. The next step is a short one-page concept.
+          </p>
         </div>
-        <div>
-          <span data-counter="4">4</span>
-          <p>core pages</p>
+        <div class="contact-actions">
+          <a
+            class="button primary"
+            href="mailto:hello@youradcouldbehere.com?subject=Early%20slot%20request&body=Hi%2C%20I%20want%20to%20see%20the%201-page%20concept.%0A%0ABrand%3A%0AWebsite%2FInstagram%3A%0AInterested%20slot%3A"
+          >
+            Email request
+          </a>
+          <a class="button secondary" href="https://t.me/narek8282">Telegram</a>
         </div>
-        <div>
-          <span data-counter="720">720</span>
-          <p>moving 3D surfaces</p>
-        </div>
-        <div>
-          <span data-counter="1">1</span>
-          <p>clear next action</p>
-        </div>
-      </section>
-
-      <section class="cinema-band">
-        <div>
-          <p class="kicker">For early brands</p>
-          <h2>Buy a place in the joke before the joke becomes public.</h2>
-        </div>
-        <a class="button secondary" href="contact.html">Ask for the one-page concept</a>
       </section>
     </main>
 
     <footer class="site-footer">
       <span>Your Ad Could Be Here</span>
-      <span>The ad is the scene.</span>
+      <span>Advertising is the story.</span>
     </footer>
-
-    <script type="module" src="script.js"></script>
   </body>
 </html>
