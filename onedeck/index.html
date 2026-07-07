@@ -66,6 +66,7 @@
         aspect-ratio: 16 / 9;
         background: var(--bg);
         box-shadow: 0 40px 100px rgba(0, 0, 0, 0.45);
+        container-type: inline-size;
         max-height: calc(100vh - 42px);
         max-width: 1600px;
         overflow: hidden;
@@ -76,7 +77,7 @@
       .kicker,
       .page-num {
         color: var(--grey);
-        font-size: clamp(9px, 0.7vw, 13px);
+        font-size: clamp(9px, 0.7cqw, 13px);
         font-weight: 800;
         letter-spacing: 0.18em;
         position: absolute;
@@ -97,7 +98,7 @@
       h1 {
         color: var(--cream);
         font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
-        font-size: clamp(56px, 7.6vw, 142px);
+        font-size: clamp(56px, 7.6cqw, 142px);
         font-weight: 900;
         letter-spacing: 0;
         line-height: 0.82;
@@ -111,13 +112,13 @@
 
       p {
         color: var(--grey);
-        font-size: clamp(14px, 1.15vw, 22px);
+        font-size: clamp(14px, 1.15cqw, 22px);
         line-height: 1.42;
         margin: 0;
       }
 
       .subtitle {
-        max-width: min(620px, 45vw);
+        max-width: min(620px, 45cqw);
       }
 
       .cta {
@@ -125,9 +126,9 @@
         background: var(--red);
         color: white;
         display: inline-flex;
-        font-size: clamp(11px, 0.82vw, 15px);
+        font-size: clamp(11px, 0.82cqw, 15px);
         font-weight: 900;
-        height: clamp(42px, 4vw, 62px);
+        height: clamp(42px, 4cqw, 62px);
         justify-content: center;
         letter-spacing: 0.08em;
         padding: 0 28px;
@@ -214,7 +215,7 @@
       }
 
       .hero-copy h1 {
-        font-size: clamp(70px, 9vw, 166px);
+        font-size: clamp(70px, 9cqw, 166px);
         max-width: 920px;
       }
 
@@ -267,7 +268,7 @@
       .skip-button {
         border: 1px solid rgba(154, 154, 158, 0.45);
         color: rgba(154, 154, 158, 0.6);
-        font-size: clamp(22px, 2.15vw, 38px);
+        font-size: clamp(22px, 2.15cqw, 38px);
         font-weight: 900;
         letter-spacing: 0.04em;
         padding: 24px 40px;
@@ -286,7 +287,7 @@
         border: 1px solid rgba(242, 237, 228, 0.12);
         color: rgba(242, 237, 228, 0.62);
         display: flex;
-        font-size: clamp(8px, 0.62vw, 11px);
+        font-size: clamp(8px, 0.62cqw, 11px);
         font-weight: 900;
         justify-content: center;
         min-height: 44px;
@@ -313,7 +314,7 @@
 
       .split-label {
         font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
-        font-size: clamp(38px, 3.8vw, 66px);
+        font-size: clamp(38px, 3.8cqw, 66px);
         line-height: 0.86;
         text-transform: uppercase;
       }
@@ -358,7 +359,7 @@
       .plaque {
         border: 1px solid var(--line);
         color: var(--cream);
-        font-size: clamp(10px, 0.8vw, 14px);
+        font-size: clamp(10px, 0.8cqw, 14px);
         font-weight: 900;
         letter-spacing: 0.14em;
         margin-top: 18px;
@@ -386,13 +387,13 @@
         color: var(--red);
         display: block;
         font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
-        font-size: clamp(34px, 3.1vw, 56px);
+        font-size: clamp(34px, 3.1cqw, 56px);
         line-height: 0.9;
       }
 
       .stat span {
         color: var(--grey);
-        font-size: clamp(9px, 0.75vw, 13px);
+        font-size: clamp(9px, 0.75cqw, 13px);
         font-weight: 800;
         letter-spacing: 0.05em;
         text-transform: uppercase;
@@ -420,7 +421,7 @@
 
       .pixel {
         background: #0f0f11;
-        font-size: clamp(6px, 0.48vw, 9px);
+        font-size: clamp(6px, 0.48cqw, 9px);
         min-height: auto;
       }
 
@@ -448,7 +449,7 @@
         background: var(--panel);
         border: 1px solid var(--red);
         color: var(--cream);
-        font-size: clamp(10px, 0.8vw, 14px);
+        font-size: clamp(10px, 0.8cqw, 14px);
         font-weight: 900;
         left: 36%;
         letter-spacing: 0.04em;
@@ -469,7 +470,7 @@
         border: 1px solid var(--line);
         color: var(--cream);
         display: grid;
-        font-size: clamp(11px, 0.9vw, 15px);
+        font-size: clamp(11px, 0.9cqw, 15px);
         font-weight: 900;
         gap: 14px;
         grid-template-columns: 18px 1fr;
@@ -534,12 +535,12 @@
         content: "";
         inset: 0 auto 0 0;
         position: absolute;
-        width: 26%;
+        width: 10px;
       }
 
       .progress span {
         color: white;
-        font-size: clamp(10px, 0.82vw, 14px);
+        font-size: clamp(10px, 0.82cqw, 14px);
         font-weight: 900;
         left: 18px;
         letter-spacing: 0.08em;
@@ -550,32 +551,31 @@
         z-index: 2;
       }
 
-      .center-line {
+      .closing-line {
         color: var(--cream);
         font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
-        font-size: clamp(48px, 5.6vw, 98px);
-        left: 50%;
+        font-size: clamp(34px, 4.4cqw, 78px);
+        left: 52%;
         line-height: 0.9;
         position: absolute;
-        text-align: center;
+        text-align: left;
         text-transform: uppercase;
-        top: 38%;
-        transform: translateX(-50%);
-        width: 70%;
+        top: 58%;
+        width: 38%;
         z-index: 4;
       }
 
       .slide-6-cta {
         left: 4%;
         position: absolute;
-        top: 72%;
+        top: 67%;
         z-index: 4;
       }
 
       .contact {
         bottom: 8%;
         color: var(--grey);
-        font-size: clamp(11px, 0.9vw, 16px);
+        font-size: clamp(11px, 0.9cqw, 16px);
         font-weight: 800;
         left: 4%;
         letter-spacing: 0.04em;
@@ -747,10 +747,12 @@
           display: none;
         }
 
-        .center-line {
-          font-size: clamp(24px, 7.8vw, 32px);
-          top: 56%;
-          width: 94%;
+        .closing-line {
+          font-size: clamp(25px, 8vw, 34px);
+          left: 7%;
+          text-align: left;
+          top: 60%;
+          width: 86%;
         }
 
         .slide-6-cta {
@@ -768,7 +770,7 @@
   </head>
   <body>
     <main class="deck">
-      <section class="slide" aria-label="Slide 1">
+      <section class="slide" id="slide-1" aria-label="Slide 1">
         <div class="stage">
           <div class="screen-wall"></div>
           <div class="silhouette"></div>
@@ -786,7 +788,7 @@
         </div>
       </section>
 
-      <section class="slide" aria-label="Slide 2">
+      <section class="slide" id="slide-2" aria-label="Slide 2">
         <div class="stage">
           <div class="kicker">The inversion</div>
           <div class="page-num">02 / 06</div>
@@ -813,7 +815,7 @@
         </div>
       </section>
 
-      <section class="slide" aria-label="Slide 3">
+      <section class="slide" id="slide-3" aria-label="Slide 3">
         <div class="stage">
           <div class="kicker">World-first claim</div>
           <div class="page-num">03 / 06</div>
@@ -837,7 +839,7 @@
         </div>
       </section>
 
-      <section class="slide" aria-label="Slide 4">
+      <section class="slide" id="slide-4" aria-label="Slide 4">
         <div class="stage">
           <div class="kicker">Slot system</div>
           <div class="page-num">04 / 06</div>
@@ -867,7 +869,7 @@
         </div>
       </section>
 
-      <section class="slide" aria-label="Slide 5">
+      <section class="slide" id="slide-5" aria-label="Slide 5">
         <div class="stage">
           <div class="kicker">Launch wave</div>
           <div class="page-num">05 / 06</div>
@@ -887,11 +889,11 @@
             <div class="heat"></div><div class="heat edge"></div><div class="heat"></div><div class="heat mid"></div><div class="heat gold"></div><div class="heat core"></div><div class="heat core"></div><div class="heat gold"></div><div class="heat core"></div><div class="heat core"></div><div class="heat core"></div><div class="heat core"></div><div class="heat gold"></div><div class="heat core"></div><div class="heat core"></div><div class="heat gold"></div><div class="heat mid"></div><div class="heat"></div><div class="heat mid"></div><div class="heat"></div><div class="heat edge"></div><div class="heat"></div>
             <div class="heat edge"></div><div class="heat"></div><div class="heat"></div><div class="heat"></div><div class="heat mid"></div><div class="heat gold"></div><div class="heat core"></div><div class="heat core"></div><div class="heat gold"></div><div class="heat core"></div><div class="heat core"></div><div class="heat gold"></div><div class="heat core"></div><div class="heat core"></div><div class="heat gold"></div><div class="heat mid"></div><div class="heat"></div><div class="heat mid"></div><div class="heat"></div><div class="heat"></div><div class="heat"></div><div class="heat edge"></div>
           </div>
-          <div class="progress"><span>2 153 884 / 8 294 400 pixels claimed (26%)</span></div>
+          <div class="progress"><span>Opening soon - first wave slots available</span></div>
         </div>
       </section>
 
-      <section class="slide" aria-label="Slide 6">
+      <section class="slide" id="slide-6" aria-label="Slide 6">
         <div class="stage">
           <div class="screen-wall"></div>
           <div class="silhouette"></div>
@@ -905,7 +907,7 @@
               in the film. The only question is whose name is in it.
             </p>
           </div>
-          <div class="center-line">Whose name is in it?</div>
+          <div class="closing-line">Whose name is in it?</div>
           <div class="slide-6-cta cta">Book The Session</div>
           <div class="contact">youradcouldbehere.com / @narek8282</div>
           <div class="qr" aria-hidden="true"></div>
