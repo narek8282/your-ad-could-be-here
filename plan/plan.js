@@ -228,12 +228,20 @@ function setVisualPrompt() {
 function generateFreeImage() {
   const prompt = encodeURIComponent(visualPrompt.value.trim());
   const seed = Math.floor(Math.random() * 100000);
+  document.querySelector("#generateFreeImage").textContent = "Generating...";
   freePreview.src = `https://image.pollinations.ai/prompt/${prompt}?width=1024&height=576&seed=${seed}&nologo=true&enhance=true`;
 }
 
 visualTheme.addEventListener("change", setVisualPrompt);
 document.querySelector("#generateFreeImage").addEventListener("click", generateFreeImage);
+freePreview.addEventListener("load", () => {
+  document.querySelector("#generateFreeImage").textContent = "Generate preview";
+});
+freePreview.addEventListener("error", () => {
+  document.querySelector("#generateFreeImage").textContent = "Retry preview";
+});
 
 setStats();
 setVisualPrompt();
+generateFreeImage();
 render();
