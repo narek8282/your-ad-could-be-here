@@ -24,7 +24,8 @@
         <nav class="nav" aria-label="Navigation">
           <a href="#about">About</a>
           <a href="#how">How it works</a>
-          <a href="#buy">Buy a pixel</a>
+          <a href="#slots">Slots</a>
+          <a href="plan/">Plan</a>
           <a href="#team">Team</a>
           <a href="#news">News</a>
           <a href="#faq">FAQ</a>
@@ -202,6 +203,22 @@
           </ol>
         </aside>
 
+        <section id="slots" class="panel inventory-panel">
+          <div class="inventory-copy">
+            <h2>Available ad slots</h2>
+            <p>
+              Live local inventory from the project database. These are the first sellable pieces of
+              the anti-film: sponsor cards, frames, seconds, credits, ticker messages, and pixels.
+            </p>
+          </div>
+          <div class="slot-grid" id="slotGrid" aria-live="polite">
+            <article class="slot-card slot-loading">
+              <b>Loading inventory</b>
+              <span>Checking local API</span>
+            </article>
+          </div>
+        </section>
+
         <section id="how" class="panel how-panel">
           <h2>How it works</h2>
           <div class="number-list">
@@ -285,9 +302,161 @@
         <nav>
           <a href="#about">About</a>
           <a href="#how">How it works</a>
+          <a href="plan/">Plan</a>
           <a href="https://t.me/narek8282">Contact</a>
         </nav>
       </footer>
     </div>
+    <div class="reserve-modal" id="reserveModal" hidden>
+      <div class="reserve-dialog" role="dialog" aria-modal="true" aria-labelledby="reserveTitle">
+        <button class="reserve-close" type="button" aria-label="Close reservation form">×</button>
+        <h2 id="reserveTitle">Reserve slot</h2>
+        <p id="reserveSlotLabel">Choose an available placement.</p>
+        <form id="reserveForm">
+          <input type="hidden" name="slot_code" />
+          <label>
+            Name or brand
+            <input name="buyer_name" autocomplete="name" required />
+          </label>
+          <label>
+            Email
+            <input name="buyer_email" autocomplete="email" type="email" required />
+          </label>
+          <label>
+            Note
+            <textarea name="notes" rows="3" placeholder="What do you want to place?"></textarea>
+          </label>
+          <button class="red-button" type="submit">Reserve</button>
+          <span class="reserve-status" id="reserveStatus"></span>
+        </form>
+      </div>
+    </div>
+    <script>
+      const slotGrid = document.querySelector("#slotGrid");
+      const reserveModal = document.querySelector("#reserveModal");
+      const reserveForm = document.querySelector("#reserveForm");
+      const reserveSlotLabel = document.querySelector("#reserveSlotLabel");
+      const reserveStatus = document.querySelector("#reserveStatus");
+      const reserveClose = document.querySelector(".reserve-close");
+      const typeLabels = {
+        credit: "Credit",
+        frame: "Frame",
+        pixel: "Pixel",
+        second: "Second",
+        sponsor: "Sponsor",
+        ticker: "Ticker"
+      };
+
+      function loadSlots() {
+        return fetch("http://localhost:8787/api/slots?status=available")
+          .then((response) => response.json())
+          .then((data) => renderSlots(data.slots || []))
+          .catch(() => {
+            slotGrid.innerHTML = `
+              <article class="slot-card slot-loading">
+                <b>Local API offline</b>
+                <span>Start the API at localhost:8787 to show live inventory</span>
+              </article>
+            `;
+          });
+      }
+
+      function renderSlots(slots) {
+        if (!slots.length) {
+          slotGrid.innerHTML = `
+            <article class="slot-card slot-loading">
+              <b>No slots available</b>
+              <span>Inventory is currently reserved</span>
+            </article>
+          `;
+          return;
+        }
+
+        slotGrid.innerHTML = slots
+          .map(
+            (slot) => `
+              <article class="slot-card">
+                <div>
+                  <small>${typeLabels[slot.slot_type] || slot.slot_type}</small>
+                  <b>${slot.title}</b>
+                  <p>${slot.description || ""}</p>
+                </div>
+                <div class="slot-card-footer">
+                  <strong>$${Number(slot.price_usd).toLocaleString("en-US")}</strong>
+                  <button
+                    class="slot-reserve"
+                    type="button"
+                    data-slot-code="${slot.slot_code}"
+                    data-slot-title="${slot.title}"
+                  >Reserve</button>
+                </div>
+              </article>
+            `
+          )
+          .join("");
+      }
+
+      function openReserveForm(slotCode, slotTitle) {
+        reserveForm.reset();
+        reserveForm.elements.slot_code.value = slotCode;
+        reserveSlotLabel.textContent = `${slotCode} · ${slotTitle}`;
+        reserveStatus.textContent = "";
+        reserveModal.hidden = false;
+        reserveForm.elements.buyer_name.focus();
+      }
+
+      function closeReserveForm() {
+        reserveModal.hidden = true;
+      }
+
+      slotGrid.addEventListener("click", (event) => {
+        const button = event.target.closest(".slot-reserve");
+        if (!button) return;
+        openReserveForm(button.dataset.slotCode, button.dataset.slotTitle);
+      });
+
+      reserveClose.addEventListener("click", closeReserveForm);
+      reserveModal.addEventListener("click", (event) => {
+        if (event.target === reserveModal) closeReserveForm();
+      });
+
+      reserveForm.addEventListener("submit", async (event) => {
+        event.preventDefault();
+        const formData = new FormData(reserveForm);
+        const slotCode = formData.get("slot_code");
+        reserveStatus.textContent = "Reserving...";
+
+        try {
+          const response = await fetch(`http://localhost:8787/api/slots/${slotCode}/reserve`, {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({
+              buyer_name: formData.get("buyer_name"),
+              buyer_email: formData.get("buyer_email"),
+              notes: formData.get("notes")
+            })
+          });
+
+          const data = await response.json();
+          if (!response.ok) {
+            throw new Error(data.error || "Reservation failed");
+          }
+
+          reserveStatus.textContent = "Reserved. Inventory updated.";
+          await loadSlots();
+          setTimeout(closeReserveForm, 900);
+        } catch (error) {
+          reserveStatus.textContent = error.message;
+        }
+      });
+
+      document.addEventListener("keydown", (event) => {
+        if (event.key === "Escape" && !reserveModal.hidden) {
+          closeReserveForm();
+        }
+      });
+
+      loadSlots();
+    </script>
   </body>
 </html>
