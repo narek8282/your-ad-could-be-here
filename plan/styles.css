@@ -99,6 +99,8 @@ main {
 .summary-grid article,
 .metrics div,
 .calendar-section,
+.visual-system,
+.visual-card,
 .prompt-grid article,
 .investor-section,
 .investor-card {
@@ -232,6 +234,27 @@ p {
 .prompt-system,
 .investor-section {
   margin-top: 18px;
+}
+
+.visual-system {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) repeat(3, minmax(180px, 0.7fr));
+  gap: 12px;
+  margin-bottom: 18px;
+  padding: 18px;
+}
+
+.visual-system h2 {
+  margin-bottom: 12px;
+}
+
+.visual-card {
+  padding: 16px;
+}
+
+.visual-card p {
+  margin-top: 10px;
+  font-size: 13px;
 }
 
 .calendar-section {
@@ -396,6 +419,7 @@ ul {
   .hero,
   .summary-grid,
   .metrics,
+  .visual-system,
   .prompt-grid {
     grid-template-columns: 1fr;
   }
