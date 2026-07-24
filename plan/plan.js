@@ -134,6 +134,9 @@ const plans = Array.from({ length: totalDays }, (_, index) => planDay(addDays(st
 const monthSelect = document.querySelector("#monthSelect");
 const typeFilter = document.querySelector("#typeFilter");
 const planRows = document.querySelector("#planRows");
+const visualTheme = document.querySelector("#visualTheme");
+const visualPrompt = document.querySelector("#visualPrompt");
+const freePreview = document.querySelector("#freePreview");
 
 const months = [...new Set(plans.map((plan) => plan.month))];
 months.forEach((month) => {
@@ -209,5 +212,28 @@ function setStats() {
 monthSelect.addEventListener("change", render);
 typeFilter.addEventListener("change", render);
 
+function buildVisualPrompt(theme) {
+  return [
+    `Cinematic campaign preview for Your Ad Could Be Here: ${theme}.`,
+    "A dark premium production room with a wall-sized content calendar, empty glowing sponsor slots inside film frames, smartphone screens for Stories, Reels, X and Reddit, and subtle US holiday campaign objects.",
+    "The image must feel like a professional pitch deck asset for sponsors and investors: commercial, strategic, expensive, clear.",
+    "Style: photorealistic cinematic advertising still, charcoal background, deep red and warm gold accents, realistic film production textures, clean analytics desk, no readable text, no fake logos, no watermark."
+  ].join(" ");
+}
+
+function setVisualPrompt() {
+  visualPrompt.value = buildVisualPrompt(visualTheme.value);
+}
+
+function generateFreeImage() {
+  const prompt = encodeURIComponent(visualPrompt.value.trim());
+  const seed = Math.floor(Math.random() * 100000);
+  freePreview.src = `https://image.pollinations.ai/prompt/${prompt}?width=1024&height=576&seed=${seed}&nologo=true&enhance=true`;
+}
+
+visualTheme.addEventListener("change", setVisualPrompt);
+document.querySelector("#generateFreeImage").addEventListener("click", generateFreeImage);
+
 setStats();
+setVisualPrompt();
 render();

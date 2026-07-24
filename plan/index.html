@@ -157,6 +157,28 @@
               This keeps every campaign recognizable as one brand.
             </p>
           </div>
+          <div class="visual-generator">
+            <div>
+              <h3>Free Image Generator</h3>
+              <p>
+                No paid API key. This uses a free image endpoint for fast campaign previews.
+                Use it for direction, then regenerate final assets with a stronger model when needed.
+              </p>
+            </div>
+            <div class="generator-controls">
+              <select id="visualTheme" aria-label="Visual theme">
+                <option value="Labor Day warmup">Labor Day warmup</option>
+                <option value="Halloween campaign">Halloween campaign</option>
+                <option value="Black Friday sponsor push">Black Friday sponsor push</option>
+                <option value="Christmas sponsor slots">Christmas sponsor slots</option>
+                <option value="New Year public build log">New Year public build log</option>
+                <option value="Investor proof pack">Investor proof pack</option>
+              </select>
+              <button id="generateFreeImage" type="button">Generate preview</button>
+            </div>
+            <textarea id="visualPrompt" aria-label="Visual prompt"></textarea>
+            <img id="freePreview" alt="Generated campaign preview" loading="lazy" />
+          </div>
         </div>
         <div class="section-head">
           <div>
