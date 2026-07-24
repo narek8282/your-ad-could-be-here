@@ -217,7 +217,8 @@ function buildVisualPrompt(theme) {
     `Cinematic campaign preview for Your Ad Could Be Here: ${theme}.`,
     "A dark premium production room with a wall-sized content calendar, empty glowing sponsor slots inside film frames, smartphone screens for Stories, Reels, X and Reddit, and subtle US holiday campaign objects.",
     "The image must feel like a professional pitch deck asset for sponsors and investors: commercial, strategic, expensive, clear.",
-    "Style: photorealistic cinematic advertising still, charcoal background, deep red and warm gold accents, realistic film production textures, clean analytics desk, no readable text, no fake logos, no watermark."
+    "Style: photorealistic cinematic advertising still, charcoal background, deep red and warm gold accents, realistic film production textures, clean analytics desk, no readable text, no fake logos, no watermark.",
+    "Hard negatives: no animals, no tigers, no wildlife, no portraits, no fantasy creatures, no random mascots, no painterly animal art."
   ].join(" ");
 }
 
