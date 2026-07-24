@@ -416,6 +416,15 @@ select {
   border-left: 1px solid var(--line);
 }
 
+.week-visual {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  object-fit: cover;
+  background: #050607;
+}
+
 .row-prompts strong {
   color: var(--ink);
 }
